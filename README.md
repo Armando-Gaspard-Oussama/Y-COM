@@ -11,5 +11,5 @@
 
 ### Séance 2021/02/09
 - Commencer création de niveau
-- Faire toutes les fonctions d'afichage
+- Faire toutes les fonctions d'affichage
 - Finir la structure personnage
