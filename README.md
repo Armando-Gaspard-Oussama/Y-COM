@@ -3,13 +3,13 @@
 [Fichier PDF](doc/Projet_L2_Belkadi_Costa_Decoux.pdf)
 ## Micro-planning
 ### Séance 2021/02/05
-- Créer le répo
-- Définir mécaniques de jeu
-- Chercher des sprites
-- Niveau de test
-- Commencer programmation
+- [x] Créer le répo
+- [x] Définir mécaniques de jeu
+- [x] Chercher des sprites
+- [ ] Niveau de test
+- [x] Commencer programmation
 
 ### Séance 2021/02/09
-- Commencer création de niveau
-- Faire toutes les fonctions d'affichage
-- Finir la structure personnage
+- [x] Commencer création de niveau (il reste le fichier du niveau à définir pour le programme)
+- [ ] Faire toutes les fonctions d'affichage (il reste l'affichage de personnage, des attaques)
+- [x] Finir la structure personnage
