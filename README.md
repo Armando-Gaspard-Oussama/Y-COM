@@ -8,3 +8,8 @@
 - Chercher des sprites
 - Niveau de test
 - Commencer programmation
+
+### Séance 2021/02/09
+- Commencer création de niveau
+- Faire toutes les fonctions d'afichage
+- Finir la structure personnage
