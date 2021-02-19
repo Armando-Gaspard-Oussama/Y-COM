@@ -15,6 +15,6 @@
 - [x] Finir la structure personnage
 
 ### Séance 2021/02/19
-- [ ] Progression sur le code d'affichage
-- [ ] Etablir le mode de description en code de niveaux
-- [ ] Refonte code stat personnages
+- [x] Progression sur le code d'affichage
+- [x] Etablir le mode de description en code de niveaux
+- [x] Refonte code stat personnages
