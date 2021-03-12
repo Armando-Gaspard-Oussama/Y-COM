@@ -18,3 +18,9 @@
 - [x] Progression sur le code d'affichage
 - [x] Etablir le mode de description en code de niveaux
 - [x] Refonte code stat personnages
+
+### Séance 2021/03/12
+- [ ] Point sur la situation et MÀJ du GANTT
+- [ ] Fonctions de chargement des niveaux
+- [ ] Création d'autres niveaux
+
