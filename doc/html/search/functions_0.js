@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['charger_5fniveau_6',['charger_niveau',['../affichage_8c.html#aa0f2abee26726b9abc217ed6c0885147',1,'affichage.c']]],
-  ['creation_5ffenetre_5frenderer_7',['creation_fenetre_renderer',['../affichage_8c.html#ab4b4ede49394185582d23fdac189df02',1,'affichage.c']]]
+  ['afficher_5fperso_5fjouant_39',['afficher_perso_jouant',['../_struct__perso_8c.html#a688e1b9711e7b9535df9c313ae57c989',1,'Struct_perso.c']]]
 ];

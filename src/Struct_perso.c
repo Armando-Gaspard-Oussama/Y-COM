@@ -17,7 +17,7 @@ typedef enum{
 
 typedef struct{
     int pos_X;
-    int pos_Y
+    int pos_Y;
     int attaque;
     int defense;
     int HP;
@@ -32,15 +32,15 @@ typedef struct{
     int DEF;
     int HP_obj;
     int PA_obj;
-    int PM obj;
+    int PM_obj;
 }t_objet;
 
 
 
-void afficher_perso_jouant(t_pers* pers, int num){
+void afficher_perso_jouant(t_pers * pers, int num){
     printf ("Nom : %s\n",pers[num].categ);
-    printf ("Type du personnage : %s\n",pers[num].type)
-    printf ("Position : %i %i\n",pers[num].pos_x , pers[num].pos_y);
+    printf ("Type du personnage : %s\n",pers[num].type);
+    printf ("Position : %i %i\n",pers[num].pos_X , pers[num].pos_Y);
     printf ("Point de vie : %i\n",pers[num].HP);
     printf ("Attaque : %i\n",pers[num].attaque);
     printf ("Défense : %i\n",pers[num].defense);
