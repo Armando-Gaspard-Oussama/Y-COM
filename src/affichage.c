@@ -1,5 +1,5 @@
-#include "affichage.h"
-#include "commun.h"
+#include "../lib/affichage.h"
+#include "../lib/commun.h"
 #include <stdio.h>
 
 /**

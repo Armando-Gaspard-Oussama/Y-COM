@@ -13,9 +13,11 @@ typedef enum carreau_e {
     VIDE, /**< 0: vide (espace où les personnages peuvent aller)*/
     PORTE, /**< 1: porte (changement de niveau)*/
     COUV, /**< 2: couverture (pour se protéger de tirs ennemis)*/
-    MUR   /**< 4: mur*/
+    MUR = 4  /**< 4: mur*/
 } carreau_t;
 
 typedef carreau_t niveau_t[9][16];
+
+void chargement_contenu_niveau(carreau_t mat[9][16],char * nom_fichier);
 
 #endif

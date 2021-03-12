@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['charger_5fniveau_1',['charger_niveau',['../affichage_8c.html#aa0f2abee26726b9abc217ed6c0885147',1,'affichage.c']]],
-  ['commun_2eh_2',['commun.h',['../commun_8h.html',1,'']]],
-  ['creation_5ffenetre_5frenderer_3',['creation_fenetre_renderer',['../affichage_8c.html#ab4b4ede49394185582d23fdac189df02',1,'affichage.c']]]
+  ['bill_5',['Bill',['../_struct__perso_8c.html#a06a3a9e3bd0a9c5f9c7191f30247fc1caeee5a0644cf8106bb73df0bf7aef0e6c',1,'Struct_perso.c']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: lib/affichage.c File Reference</title>
+<title>My Project: affichage.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,10 +59,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -74,23 +70,23 @@ $(function() {
 
 <p>Toutes les fonctions d affichage necessaire au projet.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;affichage.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="commun_8h_source.html">commun.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;../lib/affichage.h&quot;</code><br />
+<code>#include &quot;../lib/commun.h&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for affichage.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="affichage_8c__incl.png" border="0" usemap="#lib_2affichage_8c" alt=""/></div>
+<div class="center"><img src="affichage_8c__incl.png" border="0" usemap="#affichage_8c" alt=""/></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab4b4ede49394185582d23fdac189df02"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8c.html#ab4b4ede49394185582d23fdac189df02">creation_fenetre_renderer</a> (char *nom, SDL_Renderer *rend)</td></tr>
-<tr class="memdesc:ab4b4ede49394185582d23fdac189df02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre une fenetre a l aide de la SDL2 et affecte un renderer a cette fenetre.  <a href="affichage_8c.html#ab4b4ede49394185582d23fdac189df02">More...</a><br /></td></tr>
-<tr class="separator:ab4b4ede49394185582d23fdac189df02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f2abee26726b9abc217ed6c0885147"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8c.html#aa0f2abee26726b9abc217ed6c0885147">charger_niveau</a> (SDL_Window *pWindow, char *nomFNiveau)</td></tr>
-<tr class="memdesc:aa0f2abee26726b9abc217ed6c0885147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un niveau.  <a href="affichage_8c.html#aa0f2abee26726b9abc217ed6c0885147">More...</a><br /></td></tr>
-<tr class="separator:aa0f2abee26726b9abc217ed6c0885147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b57b48cfec78300ba8073227f1851a"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8c.html#a26b57b48cfec78300ba8073227f1851a">creation_fenetre_renderer</a> (char *nom, SDL_Renderer **rend)</td></tr>
+<tr class="separator:a26b57b48cfec78300ba8073227f1851a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b49226bf7704e7121d9e0500bd81b36"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8c.html#a6b49226bf7704e7121d9e0500bd81b36">charger_niveau</a> (SDL_Window *pWindow, char *nomFNiveau, SDL_Renderer *renderer)</td></tr>
+<tr class="separator:a6b49226bf7704e7121d9e0500bd81b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9009a0fbe345832581ad33f295e839e"><td class="memItemLeft" align="right" valign="top">SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichage_8c.html#af9009a0fbe345832581ad33f295e839e">charger_personnage</a> (SDL_Window *pWindow, char *nomFNiveau, SDL_Renderer *renderer, int x, int y)</td></tr>
+<tr class="separator:af9009a0fbe345832581ad33f295e839e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Toutes les fonctions d affichage necessaire au projet. </p>
@@ -98,14 +94,14 @@ Functions</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>09/02/2021 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aa0f2abee26726b9abc217ed6c0885147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0f2abee26726b9abc217ed6c0885147">&#9670;&nbsp;</a></span>charger_niveau()</h2>
+<a id="a6b49226bf7704e7121d9e0500bd81b36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b49226bf7704e7121d9e0500bd81b36">&#9670;&nbsp;</a></span>charger_niveau()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void charger_niveau </td>
+          <td class="memname">SDL_Texture* charger_niveau </td>
           <td>(</td>
           <td class="paramtype">SDL_Window *&#160;</td>
           <td class="paramname"><em>pWindow</em>, </td>
@@ -114,7 +110,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>nomFNiveau</em>&#160;</td>
+          <td class="paramname"><em>nomFNiveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -124,26 +126,62 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Charge un niveau. </p>
-<dl class="section author"><dt>Author</dt><dd>Armando Costa </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pWindow</td><td>Pointeur sur la fenetre deja ouverte </td></tr>
-    <tr><td class="paramname">nomFNiveau</td><td>Nom de l image du niveau </td></tr>
-  </table>
-  </dd>
-</dl>
-
 </div>
 </div>
-<a id="ab4b4ede49394185582d23fdac189df02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4b4ede49394185582d23fdac189df02">&#9670;&nbsp;</a></span>creation_fenetre_renderer()</h2>
+<a id="af9009a0fbe345832581ad33f295e839e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9009a0fbe345832581ad33f295e839e">&#9670;&nbsp;</a></span>charger_personnage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SDL_Window * creation_fenetre_renderer </td>
+          <td class="memname">SDL_Texture* charger_personnage </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Window *&#160;</td>
+          <td class="paramname"><em>pWindow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomFNiveau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26b57b48cfec78300ba8073227f1851a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b57b48cfec78300ba8073227f1851a">&#9670;&nbsp;</a></span>creation_fenetre_renderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Window* creation_fenetre_renderer </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>nom</em>, </td>
@@ -151,7 +189,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramtype">SDL_Renderer **&#160;</td>
           <td class="paramname"><em>rend</em>&#160;</td>
         </tr>
         <tr>
@@ -161,17 +199,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Ouvre une fenetre a l aide de la SDL2 et affecte un renderer a cette fenetre. </p>
-<dl class="section author"><dt>Author</dt><dd>Armando Costa </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">nom</td><td>Nom de la fenetre ouverte </td></tr>
-    <tr><td class="paramname">rend</td><td>Pointeur sur le renderer qui sera affecter a la fenetre generee </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Un pointeur sur la fenetre ouverte par la fonction </dd></dl>
 
 </div>
 </div>
