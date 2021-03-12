@@ -1,6 +1,6 @@
 # Y-COM (X-COM like)
 ## Diagramme de GANTT
-[Fichier PDF](doc/Projet_L2_Belkadi_Costa_Decoux.pdf)
+[Fichier PDF](doc/Projet_L2_Belkadi_Costa_Decoux_V2.pdf)
 ## Micro-planning
 ### Séance 2021/02/05
 - [x] Créer le répo
@@ -20,7 +20,7 @@
 - [x] Refonte code stat personnages
 
 ### Séance 2021/03/12
-- [ ] Point sur la situation et MÀJ du GANTT
+- [x] Point sur la situation et MÀJ du GANTT
 - [ ] Fonctions de chargement des niveaux
 - [ ] Création d'autres niveaux
 
