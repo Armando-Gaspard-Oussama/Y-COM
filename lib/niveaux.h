@@ -10,10 +10,12 @@
  * \brief Constantes qui indiquent de quel type sont une case dans une matrice de niveau.
  */
 typedef enum carreau_e {
-    VIDE, /**< 0: vide (espace où les personnages peuvent aller)*/
-    PORTE, /**< 1: porte (changement de niveau)*/
-    COUV, /**< 2: couverture (pour se protéger de tirs ennemis)*/
-    MUR = 4  /**< 4: mur*/
+    PERSO = -1, /**< case occupée par un personnage (joueur ou adversaire)**/
+    VIDE, /**< 0: vide (espace où les personnages peuvent aller)**/
+    PORTE, /**< 1: porte (changement de niveau)**/
+    BARR_H, /**< 2: couverture (pour se protéger de tirs ennemis) horizontale**/
+    BARR_V, /**< 3: couverture verticale **/
+    MUR /**< 4: mur, limite du niveau**/
 } carreau_t;
 
 typedef carreau_t niveau_t[9][16];
