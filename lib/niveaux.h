@@ -18,6 +18,8 @@ typedef enum carreau_e {
 
 typedef carreau_t niveau_t[9][16];
 
-void chargement_contenu_niveau(carreau_t mat[9][16],char * nom_fichier);
+void chargement_contenu_niveau(niveau_t mat,char * nom_fichier);
+
+void lecture_niveau(niveau_t mat);
 
 #endif

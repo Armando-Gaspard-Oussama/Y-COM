@@ -19,18 +19,18 @@
  * \param mat Matrice dans laquel sera charger les elements
  * \param nom_fichier string contenant le nom du fichiers dans lequel sont sauvegarder les elements du niveau
  */
-void chargement_contenu_niveau(carreau_t mat[9][16],char * nom_fichier){
+void chargement_contenu_niveau(niveau_t mat,char * nom_fichier){
 
     FILE * niveau = fopen(nom_fichier,"r");
     int i,j;
-    int k;
+    char k;
 
     for(i=0;i<9;i++){
 
         for(j=0;j<16;j++){
 
-            fscanf(niveau,"%d",&k);
-            mat[i][j]=k;
+            fscanf(niveau,"%c",&k);
+            mat[i][j]=k-'0';
 
         }
 
@@ -38,4 +38,19 @@ void chargement_contenu_niveau(carreau_t mat[9][16],char * nom_fichier){
 
     fclose(niveau);
 
+}
+
+void lecture_niveau(niveau_t mat){
+    int i,j;
+
+    for(i=0;i<9;i++){
+
+        for(j=0;j<16;j++){
+
+            printf(" %d ",mat[i][j]);
+
+        }
+
+        printf("\n");
+    }
 }
