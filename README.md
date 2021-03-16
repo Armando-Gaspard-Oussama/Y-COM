@@ -26,6 +26,6 @@
 
 ### Séance 2021/03/16
 - [ ] Code pour le déplacement des persos
-- [ ] Avancée sur les niveaux
-- [ ] Création d'objets
+- [x] Avancée sur les niveaux
+- [x] Création d'objets
 - [ ] Début algorithme labyrinthe de niveaux
