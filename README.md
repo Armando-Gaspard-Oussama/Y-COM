@@ -23,3 +23,9 @@
 - [x] Point sur la situation et MÀJ du GANTT
 - [x] Fonctions de chargement des niveaux
 - [x] Création d'autres niveaux
+
+### Séance 2021/03/16
+- [ ] Code pour le déplacement des persos
+- [ ] Avancée sur les niveaux
+- [ ] Création d'objets
+- [ ] Début algorithme labyrinthe de niveaux
