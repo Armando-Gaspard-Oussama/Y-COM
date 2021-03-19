@@ -76,6 +76,7 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
     SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
 
     SDL_RenderPresent(renderer);
+    SDL_RWclose(rwop);
 
     return image_tex;
   }
@@ -101,6 +102,7 @@ SDL_Texture * charger_personnage(SDL_Window * pWindow, char * nomFNiveau, SDL_Re
   SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
 
   SDL_RenderPresent(renderer);
+  SDL_RWclose(rwop);
 
   return image_tex;
 }

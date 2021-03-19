@@ -1,39 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
 
-typedef enum{
-    Bill,
-    Jane,
-    Pau,
-    Ennemie
-}t_categ;
+#include "../lib/commun.h"
+#include "../lib/Struct_perso.h"
 
-typedef enum{
-    sniper,
-    assaut,
-    corps,
-    vilain
-}t_type;
 
-typedef struct{
-    int pos_X;
-    int pos_Y;
-    int attaque;
-    int defense;
-    int HP;
-    int PA;
-    int PM;
-    t_categ categ;
-    t_type type;
-}t_pers;
-
-typedef struct{
-    int ATT;
-    int DEF;
-    int HP_obj;
-    int PA_obj;
-    int PM_obj;
-}t_objet;
 
 
 
