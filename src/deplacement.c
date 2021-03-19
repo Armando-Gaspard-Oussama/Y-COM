@@ -1,53 +1,95 @@
 #include "../lib/deplacement.h"
-#include "../lib/perso.h"
 #include "../lib/niveaux.h"
+#include <stdio.h>
 
-int disponible(carreau_t mat[9][16], int posX, int posY){
-    return ((posX>0 && posX<9) && (posY>0 && posY<16) && mat[9][16]!=MUR);
+int disponible(niveau_t mat, int posX, int posY){
+    return ((posX>0 && posX<9) && (posY>0 && posY<16) && (mat[posX][posY]==PORTE || mat[posX][posY]==VIDE));
 }
 
+int valides(int coord_x,int coord_y){
+    return ( (coord_x>=0 && coord_x<9) && (coord_y>=0 && coord_y<16) );
+}
 
-noeuds_t * creation_noeuds(int posX,int posY,noeuds_t * pere, int posXRecherche, int posYRecherche,carreau_t mat[9][16]){
+int est_vide(int coord_x, int coord_y, int mat[9][16]){
+    return ((mat[coord_x][coord_y]==0) && valides(coord_x,coord_y));
+}
 
-    noeuds_t * noeuds = malloc(sizeof(noeuds_t));
-
-    noeuds->pos_X=posX;
-    noeuds->pos_Y=posY;
-    noeuds->pere=pere;
-
-    if(posX==posXRecherche && posY==posYRecherche){
-        return noeuds;
-    }else{
-
-        if(disponible(mat,posX,posY+1)){
-            noeuds->F1=creation_noeuds(posX,posY+1,noeuds,posXRecherche,posYRecherche);
-        }else{
-            noeuds->F1=NULL;
+void afficherMat(int mat[9][16]){
+    int i,j;
+    for (i=0;i<9;i++){
+        for(j=0;j<16;j++){
+            printf(" %i ",mat[i][j]);
         }
+        printf("\n");
+    }
+}
 
-        if(disponible(mat,posX+1,posY))
-            noeuds->F2=creation_noeuds(posX+1,posY,noeuds,posXRecherche,posYRecherche);
-        }else{
-            noeuds->F2=NULL;
-        }
+void simplication_mat(niveau_t mat, int simp[9][16]){
+    int i,j;
+    for(i=0;i<9;i++){
 
-        if(disponible(mat,posX,posY-1)){
-            noeuds->F3=creation_noeuds(posX,posY-1,noeuds,posXRecherche,posYRecherche);
-        }else{
-            noeuds->F3=NULL;
-        }
+        for(j=0;j<16;j++){
 
-        if(disponible(mat,posX-1,posY)){
-            noeuds->F4=creation_noeuds(posX-1,posY,noeuds,posXRecherche,posYRecherche);
-        }else{
-            noeuds->F4=NULL;
+            if(disponible(mat,i,j)){
+                simp[i][j]=0;
+            }else{
+                simp[i][j]=-1;
+            }
         }
 
     }
-
-    return noeuds;
 }
 
-void deplacement(t_pers personnage, int posXFin, int posYFin){
+int chercher_chemin(int xDebut, int yDebut, int xFin, int yFin, int mat[9][16],int soluc[9][16])
+{
+    
 
+}
+
+void marquer_chemin(int xa, int ya,int mat[9][16]){
+    int capt = mat[xa][ya];
+    int i,j;
+    while(capt!=0){
+        capt--;
+        mat[xa][ya]=-2;
+        for(i = xa-1 ; i <xa+1; i++){
+            for(j = ya-1;j<ya+1;j++){
+                if(mat[i][j]==capt && valides(i,j)){
+                    xa=i;
+                    ya=j;
+                }
+            }
+        }
+    }
+}
+
+void nettoyer(int mat[9][16]){
+    int i,j;
+    for(i=0;i<9;i++){
+        for(j=0;j<16;j++){
+            if(mat[i][j]>0){
+                mat[i][j]=0;
+            }
+        }
+    }
+}
+
+void afficherChemin(int mat[9][16]){
+    int i,j;
+    
+    for (i=0;i<9;i++){
+        printf("|");
+        for (j=0;j<16;j++){
+            switch (mat[i][j]){
+
+            case -2:    printf(" . ");
+                        break;
+            case -1:    printf(" * ");
+                        break;
+            case 0:     printf("   ");
+                        break;
+            }
+        }
+        printf("|\n");
+    }
 }
