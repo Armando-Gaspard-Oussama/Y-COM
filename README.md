@@ -34,5 +34,5 @@
 - [x] Finir déplacement
 	- [x] pathfinding
 	- [ ] animation de déplacement intermédiare
-- [ ] Continuer le jeu de niveaux
-- [ ] Objets et stats personnages
+- [x] Continuer le jeu de niveaux
+- [x] Objets et stats personnages
