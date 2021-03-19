@@ -29,3 +29,10 @@
 - [x] Avancée sur les niveaux
 - [x] Création d'objets
 - [ ] Début algorithme labyrinthe de niveaux
+
+### Séance 2021/03/19
+- [ ] Finir déplacement
+	- [ ] pathfinding
+	- [ ] animation de déplacement intermédiare
+- [ ] Continuer le jeu de niveaux
+- [ ] Algorithme labyrinthe
