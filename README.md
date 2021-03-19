@@ -31,8 +31,8 @@
 - [ ] Début algorithme labyrinthe de niveaux
 
 ### Séance 2021/03/19
-- [ ] Finir déplacement
-	- [ ] pathfinding
+- [x] Finir déplacement
+	- [x] pathfinding
 	- [ ] animation de déplacement intermédiare
 - [ ] Continuer le jeu de niveaux
 - [ ] Algorithme labyrinthe
