@@ -35,4 +35,4 @@
 	- [ ] pathfinding
 	- [ ] animation de déplacement intermédiare
 - [ ] Continuer le jeu de niveaux
-- [ ] Algorithme labyrinthe
+- [ ] Objets et stats personnages
