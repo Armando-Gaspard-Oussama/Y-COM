@@ -13,7 +13,7 @@
  * \return un booleen sous forme d un int
  */
 int disponible(niveau_t mat, int posX, int posY){
-    return ((posY>=0 && posY<9) && (posX>=0 && posX<16) && (mat[posY][posX]==PORTE || mat[posY][posX]==VIDE));
+    return ((posX>=0 && posX<9) && (posY>=0 && posY<16) && (mat[posX][posY]==PORTE || mat[posX][posY]==VIDE));
 }
 
 /**
@@ -38,7 +38,7 @@ void afficherMat(int mat[9][16]){
     int i,j;
     for (i=0;i<9;i++){
         for(j=0;j<16;j++){
-            printf(" %i ",mat[i][j]);
+            printf(" % i ",mat[i][j]);
         }
         printf("\n");
     }
@@ -150,8 +150,8 @@ void copie_chemin(int simp[9][16],int chemin[9][16]){
  */
 int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin){
     int chemin[9][16]={0};
-    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,10)==-1){
-        printf("Pas de solution");
+    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,20)==-1){
+        printf("Pas de solution\n");
     }
     copie_chemin(simp,chemin);
     return 1;
@@ -184,19 +184,20 @@ void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend
             if( event.type == SDL_MOUSEBUTTONDOWN ){
                 x_point = event.button.x/64;
                 y_point = event.button.y/64;
-                printf("Touche appuier x: %d y : %d",x_point,y_point);
+                printf("Touche appuier x: %d y : %d\n",x_point,y_point);
                 flag=-1;
             }
 
-        }
-        printf("Appuier sur une touche\n");
+        } 
         SDL_Delay(100);
     }
-
+    afficherMat(mat);
+    afficherMat(simpli);
     chercher_chemin(simpli,perso->pos_X,perso->pos_Y,x_point,y_point);
+    afficherMat(simpli);
+
 
     while(perso->pos_X!=x_point && perso->pos_Y!=y_point){
-        printf("Position perso x : %d y : %d \n",perso->pos_X,perso->pos_Y);
         if(simpli[(perso->pos_X)+1][perso->pos_Y]==1){
             simpli[(perso->pos_X)+1][perso->pos_Y]==0;
             PositionUpdate(perso, pWindow, renderer,Texperso,(perso->pos_X)+1,perso->pos_Y);
