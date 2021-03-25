@@ -13,7 +13,7 @@
  * \return un booleen sous forme d un int
  */
 int disponible(niveau_t mat, int posX, int posY){
-    return ((posX>0 && posX<9) && (posY>0 && posY<16) && (mat[posX][posY]==PORTE || mat[posX][posY]==VIDE));
+    return ((posY>=0 && posY<9) && (posX>=0 && posX<16) && (mat[posY][posX]==PORTE || mat[posY][posX]==VIDE));
 }
 
 /**
