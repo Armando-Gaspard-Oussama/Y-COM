@@ -51,6 +51,7 @@ SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer ** rend){
  * \author Armando Costa
  * \param pWindow Pointeur sur la fenetre deja ouverte
  * \param nomFNiveau Nom de l image du niveau
+ * 
  * \return Retourne un pointeur sur la Texture
  */
 
@@ -82,9 +83,21 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
   }
 
 
-SDL_Texture * charger_personnage(SDL_Window * pWindow, char * nomFNiveau, SDL_Renderer * renderer, int x, int y){
+/**
+ * \fn void charger_personnage(SDL_Window * pWindow, char * nomFNiveau)
+ * \brief Charge un personnage
+ * \author Armando Costa
+ * \param pWindow Pointeur sur la fenetre deja ouverte
+ * \param nomFPersonnage Nom de l image du personnage
+ * \param renderer Pointeur sur le renderer ratacher a la fenetre pWindow
+ * \param x Coordonnees x ou va etre charge le personnage
+ * \param y Coordonnees y ou va etre charge le personnage
+ * \return Retourne un pointeur sur la Texture
+ */
+
+SDL_Texture * charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, int x, int y){
   SDL_Rect imgDestRect;
-  SDL_RWops *rwop=SDL_RWFromFile(nomFNiveau,"rb");
+  SDL_RWops *rwop=SDL_RWFromFile(nomFPersonnage,"rb");
   SDL_Surface *image;
 
   image = IMG_LoadPNG_RW(rwop);

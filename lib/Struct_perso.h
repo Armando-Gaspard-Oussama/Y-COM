@@ -17,7 +17,7 @@ typedef enum{
 
 typedef enum{
     M24,
-    Mosin-Nagant,
+    MosinNagant,
     M98b,
 }t_sniper;
 
@@ -40,6 +40,8 @@ typedef struct{
     int HP;
     int PA;
     int PM;
+    int pos_X;
+    int pos_Y;
     t_categ categ;
     t_type type;
 }t_pers;
@@ -49,7 +51,7 @@ typedef struct{
     int DEF;
     int HP_obj;
     int PA_obj;
-    int PM obj;
+    int PM_obj;
     t_sniper snip;
     t_assaut ass;
     t_cac cac;
