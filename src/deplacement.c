@@ -182,10 +182,10 @@ void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend
 
         while(SDL_PollEvent(&event)){
             if( event.type == SDL_MOUSEBUTTONDOWN ){
-                x_point = event.button.x/16;
-                y_point = event.button.y/9;
+                x_point = event.button.x/64;
+                y_point = event.button.y/64;
                 printf("Touche appuier x: %d y : %d",x_point,y_point);
-                flag = -1;
+                flag=-1;
             }
 
         }
@@ -196,6 +196,7 @@ void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend
     chercher_chemin(simpli,perso->pos_X,perso->pos_Y,x_point,y_point);
 
     while(perso->pos_X!=x_point && perso->pos_Y!=y_point){
+        printf("Position perso x : %d y : %d \n",perso->pos_X,perso->pos_Y);
         if(simpli[(perso->pos_X)+1][perso->pos_Y]==1){
             simpli[(perso->pos_X)+1][perso->pos_Y]==0;
             PositionUpdate(perso, pWindow, renderer,Texperso,(perso->pos_X)+1,perso->pos_Y);
