@@ -118,3 +118,21 @@ SDL_Texture * charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SD
 
   return image_tex;
 }
+
+
+void PositionUpdate(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texperso, int x, int y){
+  SDL_Rect persoPos;
+
+  SDL_RenderClear(rend);
+
+  persoPos.x=(LARGEUR/16)*x;
+  persoPos.y=(HAUTEUR/9)*y;
+
+  perso->pos_X=x;
+  perso->pos_Y=y;
+
+  SDL_QueryTexture(Texperso,NULL,NULL,&(persoPos.w),&(persoPos.h));
+  SDL_RenderCopy(rend,Texperso,NULL,&persoPos);
+
+  SDL_RenderPresent(rend);
+}

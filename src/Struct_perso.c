@@ -22,12 +22,12 @@ void afficher_perso_jouant(t_pers* pers, int num){
     printf ("\n");
 }
 
-void perso_stat(t_pers* pers, t_objet* obj, char objet){
+void perso_stat(t_pers * pers, t_objet * obj, char * objet){
      if (objet == 'sniper'){
         if (pers[num].type == 'sniper' && obj[objet].snip == 'M24'){
-            pers[num].attaque += obj[objet].ATT;
-            pers[num].PA += obj[objet].PA_obj;
-            pers[num].PM += obj[objet].PM_obj;
+            pers[num].attaque += obj->ATT;
+            pers[num].PA += obj->PA_obj;
+            pers[num].PM += obj->PM_obj;
         }
      
         if (pers[num].type == 'sniper' && obj[objet].snip == 'Mosin-Nagant'){

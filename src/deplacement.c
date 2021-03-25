@@ -1,6 +1,7 @@
 #include "../lib/deplacement.h"
 #include "../lib/niveaux.h"
 #include "../lib/Struct_perso.h"
+#include "../lib/affichage.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -149,7 +150,7 @@ void copie_chemin(int simp[9][16],int chemin[9][16]){
  */
 int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin){
     int chemin[9][16]={0};
-    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,(abs(x_fin-x_debut)+abs(y_fin-y_debut)))==-1){
+    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,10)==-1){
         printf("Pas de solution");
     }
     copie_chemin(simp,chemin);
@@ -166,18 +167,35 @@ int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_f
  * \param Texperso Texture du personnage deplace
  */
 
+
+
 void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat,SDL_Texture * Texperso){
     int simpli[9][16]={0};
     int x_point,y_point;
+    int flag =1;
+
+    SDL_Event event;
 
     simplication_mat(mat,simpli);
 
-    //Recuperer la case ou la personne clique pour deplacer (Gestion d evenement)
+    while(flag==1){
+
+        while(SDL_PollEvent(&event)){
+            if( event.type == SDL_MOUSEBUTTONDOWN ){
+                x_point = event.button.x/16;
+                y_point = event.button.y/9;
+                printf("Touche appuier x: %d y : %d",x_point,y_point);
+                flag = -1;
+            }
+
+        }
+        printf("Appuier sur une touche\n");
+        SDL_Delay(100);
+    }
 
     chercher_chemin(simpli,perso->pos_X,perso->pos_Y,x_point,y_point);
 
     while(perso->pos_X!=x_point && perso->pos_Y!=y_point){
-
         if(simpli[(perso->pos_X)+1][perso->pos_Y]==1){
             simpli[(perso->pos_X)+1][perso->pos_Y]==0;
             PositionUpdate(perso, pWindow, renderer,Texperso,(perso->pos_X)+1,perso->pos_Y);

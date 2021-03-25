@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['chargement_5fcontenu_5fniveau_40',['chargement_contenu_niveau',['../niveaux_8c.html#a2a42cfddaf040618576b87ccf367e809',1,'niveaux.c']]],
-  ['charger_5fniveau_41',['charger_niveau',['../affichage_8c.html#a6b49226bf7704e7121d9e0500bd81b36',1,'affichage.c']]],
-  ['charger_5fpersonnage_42',['charger_personnage',['../affichage_8c.html#af9009a0fbe345832581ad33f295e839e',1,'affichage.c']]],
-  ['creation_5ffenetre_5frenderer_43',['creation_fenetre_renderer',['../affichage_8c.html#a26b57b48cfec78300ba8073227f1851a',1,'affichage.c']]]
+  ['lecture_5fniveau_22',['lecture_niveau',['../niveaux_8c.html#a11fd7586ea84be658d710a61ed3a02a0',1,'lecture_niveau(niveau_t mat):&#160;niveaux.c'],['../niveaux_8h.html#a11fd7586ea84be658d710a61ed3a02a0',1,'lecture_niveau(niveau_t mat):&#160;niveaux.c']]]
 ];
