@@ -1,0 +1,3 @@
+# ignorer les assets utilisés pour créer un niveau
+Basic*
+*.xcf
