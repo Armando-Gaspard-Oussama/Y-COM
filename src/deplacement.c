@@ -26,7 +26,7 @@ int disponible(niveau_t mat, int posX, int posY){
  */
 
 int est_vide(int coord_x, int coord_y, int mat[9][16]){
-    return ((mat[coord_x][coord_y]==0) && (coord_x>=0 && coord_x<9) && (coord_y>=0 && coord_y<16) );
+    return (coord_x>=0 && coord_x<9) && (coord_y>=0 && coord_y<16) && (mat[coord_x][coord_y]==0);
 }
 
 /**
@@ -150,8 +150,8 @@ void copie_chemin(int simp[9][16],int chemin[9][16]){
  */
 int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin){
     int chemin[9][16]={0};
-    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,20)==-1){
-        printf("Pas de solution\n");
+    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,5)==-1){
+        return -1;
     }
     copie_chemin(simp,chemin);
     return 1;
@@ -169,51 +169,30 @@ int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_f
 
 
 
-void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat,SDL_Texture * Texperso){
+void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat,SDL_Texture * Texperso, SDL_Texture * Texniv){
     int simpli[9][16]={0};
-    int x_point,y_point;
+    int x_point=-1,y_point=-1;
     int flag =1;
 
     SDL_Event event;
 
     simplication_mat(mat,simpli);
+    simpli[perso->pos_X][perso->pos_Y]=0;
+    afficherMat(simpli);
 
-    while(flag==1){
+    while(chercher_chemin(simpli,perso->pos_X,perso->pos_Y,x_point,y_point)!=1 || !est_vide(x_point,y_point,simpli)){
 
         while(SDL_PollEvent(&event)){
+            if(event.type == SDL_QUIT){
+                return ;   
+            }
             if( event.type == SDL_MOUSEBUTTONDOWN ){
                 x_point = event.button.x/64;
                 y_point = event.button.y/64;
-                printf("Touche appuier x: %d y : %d\n",x_point,y_point);
                 flag=-1;
             }
-
         } 
-        SDL_Delay(100);
+        SDL_Delay(10);
     }
-    afficherMat(mat);
-    afficherMat(simpli);
-    chercher_chemin(simpli,perso->pos_X,perso->pos_Y,x_point,y_point);
-    afficherMat(simpli);
-
-
-    while(perso->pos_X!=x_point && perso->pos_Y!=y_point){
-        if(simpli[(perso->pos_X)+1][perso->pos_Y]==1){
-            simpli[(perso->pos_X)+1][perso->pos_Y]==0;
-            PositionUpdate(perso, pWindow, renderer,Texperso,(perso->pos_X)+1,perso->pos_Y);
-        } 
-        if(simpli[(perso->pos_X)][(perso->pos_Y)+1]==1){
-            simpli[perso->pos_X][(perso->pos_Y)+1]==0;
-            PositionUpdate(perso, pWindow, renderer,Texperso,(perso->pos_X)+1,perso->pos_Y);
-        } 
-        if(simpli[(perso->pos_X)-1][perso->pos_Y]==1){
-            simpli[(perso->pos_X)-1][perso->pos_Y]==0;
-            PositionUpdate(perso, pWindow, renderer,Texperso,(perso->pos_X)+1,perso->pos_Y);
-        } 
-        if(simpli[perso->pos_X][(perso->pos_Y)-1]==1){
-            simpli[perso->pos_X][(perso->pos_Y)-1]==0;
-            PositionUpdate(perso, pWindow, renderer,Texperso,(perso->pos_X)+1,perso->pos_Y);
-        } 
-
-    }
+    PositionUpdate(perso,pWindow,renderer,Texperso,Texniv,x_point,y_point);
 }
