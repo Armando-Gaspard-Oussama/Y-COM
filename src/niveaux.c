@@ -25,6 +25,11 @@ void chargement_contenu_niveau(niveau_t mat,char * nom_fichier){
     int i,j;
     char k;
 
+    if(!niveau){
+        printf("Le fichier n'as pas pu etre ouvert");
+        exit -1;
+    }
+
     for(i=0;i<9;i++){
 
         for(j=0;j<16;j++){
