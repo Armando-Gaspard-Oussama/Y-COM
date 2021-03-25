@@ -37,6 +37,13 @@
 - [x] Continuer le jeu de niveaux
 - [x] Objets et stats personnages
 
-### Séance 2021/03/25
+### Séance 2021/03/25 1
 - [x] Documentation
 - [x] Test
+
+### Séance 2021/03/25 2
+- [ ] Refonte struct_perso
+- [ ] Chargement stats objets
+- [ ] Déplacements
+- [ ] Tests
+- [ ] (optionnellement) niveaux supplémentaires
