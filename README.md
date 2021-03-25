@@ -38,5 +38,5 @@
 - [x] Objets et stats personnages
 
 ### Séance 2021/03/25
-- [ ] Documentation
-- [ ] Test
+- [x] Documentation
+- [x] Test

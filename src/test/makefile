@@ -12,3 +12,9 @@ niveaux.o : ../niveaux.c ../../lib/niveaux.h
 	gcc ../niveaux.c -c -lSDL2 -lSDL2_ttf -lSDL2_image -g
 deplacement.o : ../deplacement.c ../../lib/deplacement.h
 	gcc ../deplacement.c -c -lSDL2 -lSDL2_ttf -lSDL2_image -g
+
+test_deplacement: deplacement.o niveaux.o test_deplacement.o
+	gcc $^
+
+test_deplacement.o: test_deplacement.c ../lib/deplacement.h ../lib/niveaux.h
+	gcc -g -c $<
