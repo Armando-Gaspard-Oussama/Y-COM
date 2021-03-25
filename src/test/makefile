@@ -1,5 +1,6 @@
 GIT_ROOT = ../../
 INC_DIR = $(GIT_ROOT)/lib/
+LIBS = -lSDL2 -lSDL2_image
 
 all: affichage.o niveaux.o test_niveau.o deplacement.o test_niveau
 
@@ -16,8 +17,8 @@ niveaux.o : ../niveaux.c ../../lib/niveaux.h
 deplacement.o : ../deplacement.c ../../lib/deplacement.h
 	gcc ../deplacement.c -c -lSDL2 -lSDL2_ttf -lSDL2_image -g
 
-test_deplacement: deplacement.o niveaux.o test_deplacement.o
-	gcc -o $@ $^
+test_deplacement: deplacement.o niveaux.o test_deplacement.o affichage.o
+	gcc $(LIBS) -o $@ $^ 
 
 test_deplacement.o: test_deplacement.c ../../lib/deplacement.h ../../lib/niveaux.h
 	gcc -g -c $< -I $(INC_DIR)

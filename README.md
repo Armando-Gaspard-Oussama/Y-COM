@@ -42,8 +42,8 @@
 - [x] Test
 
 ### Séance 2021/03/25 2
-- [ ] Refonte struct_perso
-- [ ] Chargement stats objets
-- [ ] Déplacements
-- [ ] Tests
+- [x] Refonte struct_perso
+- [x] Chargement stats objets
+- [x] Déplacements
+- [ ] Tests (à finir: déplacement, créer les tests des autres programmes)
 - [ ] (optionnellement) niveaux supplémentaires
