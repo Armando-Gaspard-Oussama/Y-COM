@@ -4,7 +4,7 @@
 
 /**
  * \file affichage.c
- * \brief Toutes les fonctions d affichage necessaire au projet
+ * \brief Toutes les fonctions d'affichage nécessaires au projet.
  * \author Armando Costa
  * \version 1.0
  * \date 09/02/2021
@@ -14,11 +14,11 @@
 
 /**
  * \fn SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer * rend)
- * \brief Ouvre une fenetre a l aide de la SDL2 et affecte un renderer a cette fenetre
+ * \brief Ouvre une fenêtre à l'aide de la SDL2 et affecte un renderer à cette fenêtre.
  * \author Armando Costa
- * \param nom Nom de la fenetre ouverte
- * \param rend Pointeur sur le renderer qui sera affecter a la fenetre generee
- * \return Un pointeur sur la fenetre ouverte par la fonction
+ * \param nom Nom de la fenêtre ouverte
+ * \param rend Pointeur sur le renderer qui sera affecté à la fenêtre genérée
+ * \return Un pointeur sur la fenêtre ouverte par la fonction
  */
 
 SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer ** rend){
@@ -49,8 +49,8 @@ SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer ** rend){
  * \fn void charger_niveau(SDL_Window * pWindow, char * nomFNiveau)
  * \brief Charge un niveau
  * \author Armando Costa
- * \param pWindow Pointeur sur la fenetre deja ouverte
- * \param nomFNiveau Nom de l image du niveau
+ * \param pWindow Pointeur sur la fenêtre déjà ouverte
+ * \param nomFNiveau Nom de l'image du niveau
  * \return Retourne un pointeur sur la Texture
  */
 
