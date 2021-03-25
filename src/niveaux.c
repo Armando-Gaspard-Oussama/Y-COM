@@ -40,6 +40,12 @@ void chargement_contenu_niveau(niveau_t mat,char * nom_fichier){
 
 }
 
+/**
+ * \fn void lecture_niveau(niveau_t mat)
+ * \brief Affiche sur la sortie standart (le terminale) le niveau
+ * \param mat Matrice comportant la description du niveau
+ */
+
 void lecture_niveau(niveau_t mat){
     int i,j;
 
