@@ -18,12 +18,12 @@ int main(){
     int mat[9][16]={0};
     window=creation_fenetre_renderer("test",&rend);
     niveau=charger_niveau(window,"../../media/sprites/niv_06.png",rend);
-    perso = charger_personnage(window,"./perso.png",rend,3,4);
+    perso = charger_personnage(window,"./perso.png",rend,3,2);
     chargement_contenu_niveau(niv,"../../media/niveaux/06.niv");
+    phase_deplacement(&pers,window,rend,niv,perso,niveau);
 
-    phase_deplacement(&pers,window,rend,niv,perso);
-    
-    SDL_Delay(10000);
+
+    SDL_Delay(1000);
     SDL_DestroyTexture(niveau);
     SDL_DestroyTexture(perso);
     SDL_DestroyRenderer(rend);

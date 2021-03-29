@@ -120,16 +120,23 @@ SDL_Texture * charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SD
 }
 
 
-void PositionUpdate(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texperso, int x, int y){
+void PositionUpdate(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texperso, SDL_Texture * Texniv, int x, int y){
   SDL_Rect persoPos;
+  SDL_Rect nivPos;
 
   SDL_RenderClear(rend);
 
   persoPos.x=(LARGEUR/16)*x;
   persoPos.y=(HAUTEUR/9)*y;
 
+  nivPos.x=0;
+  nivPos.y=0;
+
   perso->pos_X=x;
   perso->pos_Y=y;
+
+  SDL_QueryTexture(Texniv,NULL,NULL,&(nivPos.w),&(nivPos.h));
+  SDL_RenderCopy(rend,Texniv,NULL,&nivPos);
 
   SDL_QueryTexture(Texperso,NULL,NULL,&(persoPos.w),&(persoPos.h));
   SDL_RenderCopy(rend,Texperso,NULL,&persoPos);
