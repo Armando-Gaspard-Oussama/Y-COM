@@ -49,8 +49,8 @@
 - [ ] (optionnellement) niveaux supplémentaires
 
 ### Séance 2021/03/29
-- [ ] documentation de Struct_perso
+- [x] documentation de Struct_perso
 - [ ] Tests de struct_perso
-- [ ] Refonte code déplacement
-- [ ] Recherche de sprites persos
+- [x] Refonte code déplacement
+- [x] Recherche de sprites persos
 - [ ] poursuite des autres tests 
