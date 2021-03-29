@@ -3,7 +3,13 @@
 
 #define zxc
 
+
     #include "./commun.h"
+
+    /**
+     * \file struct.h
+     * \brief Définitions des types et fonctions relatifs aux objets et personnages
+     */
 
 
     typedef enum{
@@ -16,18 +22,18 @@
 
     typedef struct{
         char nom[20];
+        int poids_inv_max;
         int attaque;
         int defense;
         int HP;
         int PA;
         int PM;
-        int pos_X;
-        int pos_Y;
         t_categ categ;
     }t_pers;
 
     typedef struct{
         char nom[20];
+        int Poids;
         int ATT;
         int DEF;
         int HP_obj;
