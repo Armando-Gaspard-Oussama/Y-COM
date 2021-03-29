@@ -47,3 +47,10 @@
 - [x] Déplacements
 - [ ] Tests (à finir: déplacement, créer les tests des autres programmes)
 - [ ] (optionnellement) niveaux supplémentaires
+
+### Séance 2021/03/29
+- [ ] documentation de Struct_perso
+- [ ] Tests de struct_perso
+- [ ] Refonte code déplacement
+- [ ] Recherche de sprites persos
+- [ ] poursuite des autres tests 
