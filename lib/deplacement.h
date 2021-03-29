@@ -3,6 +3,12 @@
 
 #define qwe
 
+
+    /**
+     * \file deplacement.h
+     * \brief Contient toutes les variables et fonction relatif au deplacement
+     * \author Armando Costa
+     */
     #include "commun.h"
     #include "niveaux.h"
     #include "Struct_perso.h"
