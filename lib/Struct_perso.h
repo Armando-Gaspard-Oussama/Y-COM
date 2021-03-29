@@ -6,7 +6,7 @@
 #include "./commun.h"
 
 
- typedef enum{
+typedef enum{
     sniper,
     assaut,
     corps,
@@ -21,6 +21,8 @@ typedef struct{
     int HP;
     int PA;
     int PM;
+    int pos_X;
+    int pos_Y;
     t_categ categ;
 }t_pers;
 

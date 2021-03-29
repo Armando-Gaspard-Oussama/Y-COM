@@ -89,57 +89,73 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
  * \param pWindow Pointeur sur la fenetre deja ouverte
  * \param nomFPersonnage Nom de l image du personnage
  * \param renderer Pointeur sur le renderer ratacher a la fenetre pWindow
- * \param x Coordonnees x ou va etre charge le personnage
- * \param y Coordonnees y ou va etre charge le personnage
- * \return Retourne un pointeur sur la Texture
+ * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
+ * \param numeroPerso Le nombre de personnage dans le tableau
  */
 
-SDL_Texture * charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, int x, int y){
+void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso){
   SDL_Rect imgDestRect;
   SDL_RWops *rwop=SDL_RWFromFile(nomFPersonnage,"rb");
   SDL_Surface *image;
 
   image = IMG_LoadPNG_RW(rwop);
-  SDL_Texture * image_tex = SDL_CreateTextureFromSurface(renderer, image);
+  tabPerso[*numeroPerso].Tex= SDL_CreateTextureFromSurface(renderer, image);
 
   if(!image) {
      printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
   }
   SDL_FreeSurface(image);
 
-  imgDestRect.x = (LARGEUR/16)*x;
-  imgDestRect.y = (HAUTEUR/9)*y;
+  imgDestRect.x = (LARGEUR/16)* tabPerso[*numeroPerso].stPerso.pos_X;
+  imgDestRect.y = (HAUTEUR/9)* tabPerso[*numeroPerso].stPerso.pos_Y;
 
-  SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-  SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
+  SDL_QueryTexture(tabPerso[*numeroPerso].Tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+  SDL_RenderCopy(renderer, tabPerso[*numeroPerso].Tex, NULL, &imgDestRect);
 
   SDL_RenderPresent(renderer);
   SDL_RWclose(rwop);
 
-  return image_tex;
+  (*numeroPerso)++;
 }
 
+/**
+ * \fn void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso)
+ * \brief Rafraichit la position des Texture correspond au personnage
+ * \author Armando Costa
+ * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
+ * \param pWindow Pointeur sur la fenetre deja ouverte
+ * \param rend Pointeur sur le renderer ratacher a la fenetre pWindow
+ * \param Texniv Texture du niveau
+ * \param nbPerso Le nombre de personnage dans le tableau
+ */
 
-void PositionUpdate(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texperso, SDL_Texture * Texniv, int x, int y){
+void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso){
   SDL_Rect persoPos;
   SDL_Rect nivPos;
+  int i;
 
   SDL_RenderClear(rend);
 
-  persoPos.x=(LARGEUR/16)*x;
-  persoPos.y=(HAUTEUR/9)*y;
 
   nivPos.x=0;
   nivPos.y=0;
 
-  perso->pos_X=x;
-  perso->pos_Y=y;
 
   SDL_QueryTexture(Texniv,NULL,NULL,&(nivPos.w),&(nivPos.h));
   SDL_RenderCopy(rend,Texniv,NULL,&nivPos);
 
-  SDL_QueryTexture(Texperso,NULL,NULL,&(persoPos.w),&(persoPos.h));
-  SDL_RenderCopy(rend,Texperso,NULL,&persoPos);
+
+  for(i=0;i<nbPerso;i++){
+
+    persoPos.x=(LARGEUR/16)*tabPerso[i].stPerso.pos_X;
+    persoPos.y=(HAUTEUR/9)*tabPerso[i].stPerso.pos_Y;
+
+    SDL_QueryTexture((tabPerso[i].Tex),NULL,NULL,&(persoPos.w),&(persoPos.h));
+
+    SDL_RenderCopy(rend,(tabPerso[i].Tex),NULL,&persoPos);
+
+  }
+
 
   SDL_RenderPresent(rend);
 }

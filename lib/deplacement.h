@@ -6,6 +6,7 @@
     #include "commun.h"
     #include "niveaux.h"
     #include "Struct_perso.h"
+    #include "affichage.h"
 
     int disponible(niveau_t mat, int posX, int posY);
 
@@ -23,5 +24,5 @@
 
     int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin);
 
-    void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat,SDL_Texture * Texperso, SDL_Texture * Texniv);
+    void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv,int nbPerso);
 #endif

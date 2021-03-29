@@ -160,16 +160,18 @@ int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_f
 /**
  * \fn void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat,SDL_Texture * Texperso)
  * \brief Fonction permettant de gerer la partie deplacement d'un personnage lors d'un tour
- * \param perso Pointeur sur le personnage qui sera deplace
+ * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
+ * \param numPerso indice dans le tableau tabPerso du personnage que l on veut bouger
  * \param pWindow pointeur sur la fenetre
  * \param renderer pointeur sur le renderer liee la fenetre
  * \param mat Matrice devriant le niveau
- * \param Texperso Texture du personnage deplace
+ * \param Texniv Texture du niveau
+ * \param nbPerso Nombre total de personnage inscrit dans le tableau tabPerso
  */
 
 
 
-void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat,SDL_Texture * Texperso, SDL_Texture * Texniv){
+void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv, int nbPerso){
     int simpli[9][16]={0};
     int x_point=-1,y_point=-1;
     int flag =1;
@@ -177,10 +179,9 @@ void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend
     SDL_Event event;
 
     simplication_mat(mat,simpli);
-    simpli[perso->pos_X][perso->pos_Y]=0;
-    afficherMat(simpli);
+    simpli[tabPerso[numPerso].stPerso.pos_X][tabPerso[numPerso].stPerso.pos_Y]=0;
 
-    while(chercher_chemin(simpli,perso->pos_X,perso->pos_Y,x_point,y_point)!=1 || !est_vide(x_point,y_point,simpli)){
+    while(flag==1){
 
         while(SDL_PollEvent(&event)){
             if(event.type == SDL_QUIT){
@@ -189,10 +190,16 @@ void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * rend
             if( event.type == SDL_MOUSEBUTTONDOWN ){
                 x_point = event.button.x/64;
                 y_point = event.button.y/64;
-                flag=-1;
+                if(est_vide(y_point,x_point,simpli)){
+                    if (chercher_chemin(simpli, tabPerso[numPerso].stPerso.pos_X, tabPerso[numPerso].stPerso.pos_Y, x_point, y_point)==1 ){
+                        flag=-1;
+                    }
+                }   
             }
         } 
         SDL_Delay(10);
     }
-    PositionUpdate(perso,pWindow,renderer,Texperso,Texniv,x_point,y_point);
+    tabPerso[numPerso].stPerso.pos_X=x_point;
+    tabPerso[numPerso].stPerso.pos_Y=y_point;
+    Update(tabPerso,pWindow,renderer,Texniv,nbPerso);
 }
