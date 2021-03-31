@@ -28,6 +28,8 @@
         int HP;
         int PA;
         int PM;
+        int pos_X;
+        int pos_Y;
         t_categ categ;
     }t_pers;
 
