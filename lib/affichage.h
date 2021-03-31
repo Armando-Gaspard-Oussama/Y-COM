@@ -4,6 +4,7 @@
 #define asd
     #include "./commun.h"
     #include "./Struct_perso.h"
+    #include "./niveaux.h"
 
     /**
      * \file affichage.h
@@ -25,7 +26,7 @@
 
     SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Renderer * renderer);
 
-    void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso);
+    void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso,niveau_t niv);
 
     void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso);
 #endif

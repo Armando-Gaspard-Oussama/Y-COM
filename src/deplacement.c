@@ -179,8 +179,7 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
     SDL_Event event;
 
     simplication_mat(mat,simpli);
-    simpli[tabPerso[numPerso].stPerso.pos_X][tabPerso[numPerso].stPerso.pos_Y]=0;
-
+    afficherMat(simpli);
     while(flag==1){
 
         while(SDL_PollEvent(&event)){
@@ -199,7 +198,9 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
         } 
         SDL_Delay(10);
     }
+    mat[tabPerso[numPerso].stPerso.pos_Y][tabPerso[numPerso].stPerso.pos_X]=0;
     tabPerso[numPerso].stPerso.pos_X=x_point;
     tabPerso[numPerso].stPerso.pos_Y=y_point;
+    mat[tabPerso[numPerso].stPerso.pos_Y][tabPerso[numPerso].stPerso.pos_X]=-1;
     Update(tabPerso,pWindow,renderer,Texniv,nbPerso);
 }

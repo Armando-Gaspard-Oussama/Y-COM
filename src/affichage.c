@@ -1,5 +1,6 @@
 #include "../lib/affichage.h"
 #include "../lib/commun.h"
+#include "../lib/niveaux.h"
 #include <stdio.h>
 
 /**
@@ -93,7 +94,7 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
  * \param numeroPerso Le nombre de personnage dans le tableau
  */
 
-void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso){
+void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso,niveau_t niv){
   SDL_Rect imgDestRect;
   SDL_RWops *rwop=SDL_RWFromFile(nomFPersonnage,"rb");
   SDL_Surface *image;
@@ -105,6 +106,8 @@ void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Rendere
      printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
   }
   SDL_FreeSurface(image);
+
+  niv[tabPerso[*numeroPerso].stPerso.pos_Y][tabPerso[*numeroPerso].stPerso.pos_X]=PERSO;
 
   imgDestRect.x = (LARGEUR/16)* tabPerso[*numeroPerso].stPerso.pos_X;
   imgDestRect.y = (HAUTEUR/9)* tabPerso[*numeroPerso].stPerso.pos_Y;

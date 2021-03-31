@@ -4,8 +4,9 @@
 #define fff
     #include "./commun.h"
     #include "./affichage.h"
+    #include "./niveaux.h"
 
-    int est_ennemie(niveau_t mat, int x, int y);
+    int est_perso(niveau_t mat, int x, int y);
 
     int getNumEnnemie(t_texperso tabPerso[],int x, int y, int nbPerso);
 
