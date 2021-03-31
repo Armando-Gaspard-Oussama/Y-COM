@@ -57,8 +57,8 @@
 
 ### Séance 2021/03/31
 - [x] Combat
-	-[x] Attaque
-	-[ ] Gestion des barrieres
+	- [x] Attaque
+	- [ ] Gestion des barrieres
 - [x] Inventaire
 - [ ] Poursuite des tests 
 - [x] Commencement du labyrinthe de niveau
