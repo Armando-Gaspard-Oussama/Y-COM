@@ -62,3 +62,10 @@
 - [x] Inventaire
 - [ ] Poursuite des tests 
 - [x] Commencement du labyrinthe de niveau
+
+### Séance 2021/04/06
+- [x] Labyrinthe de niveau
+- [x] Combat
+	- [x] Gestion des barrieres
+- [x] Documentation
+- [ ] Conditions de fin de combats

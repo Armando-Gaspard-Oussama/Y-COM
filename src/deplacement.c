@@ -121,6 +121,27 @@ int chercher_chemin_rec(int simp[9][16],int chemin[9][16],int x,int y, int x_fin
 
     return -1;
 }
+
+/**
+ * \fn int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin)
+ * \brief Fonction d encapsulation de checher_chemin_rec
+ * \param simp Matrice comportant la simplification du niveau
+ * \param x_debut Coordonnes x ou se trouve le personnage
+ * \param y_debut Coordonnes y ou se trouve le personnage
+ * \param x_fin Coordonnes x ou on veut aller
+ * \param y_fin Coordonnes y ou on veut aller
+ * \return Un booleen en fonction de si un chemin a ete trouver ou non
+ */
+int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin){
+    int chemin[9][16]={0};
+    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,3)==-1){
+        return -1;
+    }
+    copie_chemin(simp,chemin);
+    return 1;
+}
+
+
 /**
  * \fn void copie_chemin(int simp[9][16],int chemin[9][16])
  * \brief Transpose le chemin de la matrice chemin jusqu a la matrice simpliee
@@ -140,24 +161,6 @@ void copie_chemin(int simp[9][16],int chemin[9][16]){
 }
 
 /**
- * \fn int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin)
- * \brief Fonction d encapsulation de checher_chemin_rec
- * \param simp Matrice comportant la simplification du niveau
- * \param x_debut Coordonnes x ou se trouve le personnage
- * \param y_debut Coordonnes y ou se trouve le personnage
- * \param x_fin Coordonnes x ou on veut aller
- * \param y_fin Coordonnes y ou on veut aller
- */
-int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin){
-    int chemin[9][16]={0};
-    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,5)==-1){
-        return -1;
-    }
-    copie_chemin(simp,chemin);
-    return 1;
-}
-
-/**
  * \fn void phase_deplacement(t_pers * perso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat,SDL_Texture * Texperso)
  * \brief Fonction permettant de gerer la partie deplacement d'un personnage lors d'un tour
  * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
@@ -169,8 +172,6 @@ int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_f
  * \param nbPerso Nombre total de personnage inscrit dans le tableau tabPerso
  */
 
-
-
 void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv, int nbPerso){
     int simpli[9][16]={0};
     int x_point=-1,y_point=-1;
@@ -179,7 +180,7 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
     SDL_Event event;
 
     simplication_mat(mat,simpli);
-    afficherMat(simpli);
+    
     while(flag==1){
 
         while(SDL_PollEvent(&event)){
@@ -199,8 +200,11 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
         SDL_Delay(10);
     }
     mat[tabPerso[numPerso].stPerso.pos_Y][tabPerso[numPerso].stPerso.pos_X]=0;
+
     tabPerso[numPerso].stPerso.pos_X=x_point;
     tabPerso[numPerso].stPerso.pos_Y=y_point;
+
     mat[tabPerso[numPerso].stPerso.pos_Y][tabPerso[numPerso].stPerso.pos_X]=-1;
+
     Update(tabPerso,pWindow,renderer,Texniv,nbPerso);
 }

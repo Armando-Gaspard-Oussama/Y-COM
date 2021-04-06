@@ -14,7 +14,7 @@
 
 
 /**
- * \fn SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer * rend)
+ * \fn SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer ** rend)
  * \brief Ouvre une fenêtre à l'aide de la SDL2 et affecte un renderer à cette fenêtre.
  * \author Armando Costa
  * \param nom Nom de la fenêtre ouverte
@@ -47,11 +47,12 @@ SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer ** rend){
 }
 
 /**
- * \fn void charger_niveau(SDL_Window * pWindow, char * nomFNiveau)
+ * \fn void charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Renderer * renderer)
  * \brief Charge un niveau
  * \author Armando Costa
  * \param pWindow Pointeur sur la fenêtre déjà ouverte
  * \param nomFNiveau Nom de l'image du niveau
+ * \param renderer Pointeur sur le renderer
  * \return Retourne un pointeur sur la Texture
  */
 
@@ -92,6 +93,7 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
  * \param renderer Pointeur sur le renderer ratacher a la fenetre pWindow
  * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
  * \param numeroPerso Le nombre de personnage dans le tableau
+ * \param nib Matrice decrivant le niveau
  */
 
 void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso,niveau_t niv){
