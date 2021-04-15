@@ -1,15 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/mman.h>
-#include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
-#include <sys/time.h>
 #include <time.h>
-#include <sys/resource.h>
-#include <arpa/inet.h>
 #include "../lib/labyrinthe_niveau.h"
 #include "../lib/commun.h"
 
