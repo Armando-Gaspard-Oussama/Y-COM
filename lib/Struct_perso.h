@@ -5,7 +5,7 @@
 
 
     #include "./commun.h"
-
+    
     /**
      * \file struct.h
      * \brief Définitions des types et fonctions relatifs aux objets et personnages
@@ -49,5 +49,7 @@
 
     void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab);
 
+
     void perso_stat(t_pers* pers, t_objet * objet);
+
 #endif

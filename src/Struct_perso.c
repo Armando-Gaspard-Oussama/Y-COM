@@ -9,7 +9,8 @@
  */
 
 #include "../lib/commun.h"
-#include "../lib/struct.h"
+#include "../lib/Struct_perso.h"
+#include "../lib/affichage.h"
 
 /**
  * \fn void afficher_perso_jouant(t_pers* pers, int num)
@@ -63,7 +64,7 @@ void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab){
     for (int i=0 ; i<nb_obj ; i++){
 
         fscanf(fic,"Nom : %s", nom_arme);
-        fscanf(fic,"Poids : %s", taille);
+        fscanf(fic,"Poids : %s", tab->Poids);
         fscanf(fic,"ATT : %i", &att);
         fscanf(fic,"DEF : %i", &def);
         fscanf(fic,"HP_obj : %i", &hp);
@@ -83,6 +84,7 @@ void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab){
     fclose(fic);
 }
 
+
 /**
  * \fn void afficher_arme(t_objet* obj, int num)
  * \brief affiche les informations sur les armes
@@ -93,12 +95,12 @@ void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab){
 void afficher_arme(t_objet* obj, int num){
     printf ("Nom : %s\n",obj[num].nom);
 
-    printf ("Poids de l'objet : %s\n",obj[num].poids);
+    printf ("Poids de l'objet : %s\n",obj[num].Poids);
 
     printf ("Point de vie : %i\n",obj[num].HP_obj);
-    printf ("taille de l'objet : %i\n",obj[num].taille);
+    printf ("taille de l'objet : %i\n",obj[num].Poids);
     printf ("Attaque : %i\n",obj[num].ATT);
-    printf ("Défense : %i\n",obj[num].DER);
+    printf ("Défense : %i\n",obj[num].DEF);
     printf ("Point d'action : %i\n",obj[num].PA_obj);
     printf ("Point de mouvement : %i\n",obj[num].PM_obj);
     printf ("\n");
@@ -115,10 +117,10 @@ void afficher_arme(t_objet* obj, int num){
 void perso_stat(t_pers* pers, t_objet * objet){
 
     if (pers->poids_inv_max > 0 ){
-           if(pers->poids_inv_max - objet->poids < 0){
+           if(pers->poids_inv_max - objet->Poids < 0){
                printf("l'objet depage le poids maximul autorisé par l'inventaire");
            }
-           else pers->poids_inv_max -= objet->poids;
+           else pers->poids_inv_max -= objet->Poids;
     }
     else printf("l'inventaire est déjà plein");
 
@@ -128,4 +130,4 @@ void perso_stat(t_pers* pers, t_objet * objet){
     pers->PA += objet->PA_obj;
     pers->PM += objet->PM_obj;
 
-}    
+} 

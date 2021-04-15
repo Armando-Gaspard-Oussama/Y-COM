@@ -1,6 +1,7 @@
 #include "../lib/affichage.h"
 #include "../lib/commun.h"
 #include "../lib/niveaux.h"
+#include "../lib/Struct_perso.h"
 #include <stdio.h>
 
 /**
@@ -83,6 +84,48 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
     return image_tex;
   }
 
+/**
+ * \fn charger_stat_perso(t_texperso tabPerso[], int numPerso, char * nomFPerso)
+ * \brief stock les informations sur les personnages dans un tableau de personnages
+ * \param nomFPerso nom du fichier contenant les objets
+ * \param numpPerso nombre de personnages dans le fichier
+ * \param tabPerso tableau sur la structure pers pour stocker toutes les valeurs
+ */
+void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso){
+
+    FILE* fic;
+    fic = fopen("../../media/personnagesEtArmes/pers.txt", "r");
+
+    char * nom_pers;
+
+    int att,def,hp,pa,pm,poids,categ;
+
+    int i;
+
+    for (i=0 ; i<catego ; i++){
+
+        fscanf(fic,"nom : %s", nom_pers);
+        fscanf(fic,"poids : %s", &poids);
+        fscanf(fic,"ATT : %i", &att);
+        fscanf(fic,"DEF : %i", &def);
+        fscanf(fic,"HP_obj : %i", &hp);
+        fscanf(fic,"PA_obj : %i", &pa);
+        fscanf(fic,"PM_obj : %i", &pm);
+        fscanf(fic,"categ : %i", &categ);
+
+    }
+
+        strcpy(nom_pers,tabPerso[numPerso].stPerso.nom);
+        tabPerso[numPerso].stPerso.poids_inv_max = poids;
+        tabPerso[numPerso].stPerso.attaque = att;
+        tabPerso[numPerso].stPerso.defense = def;
+        tabPerso[numPerso].stPerso.HP = hp;
+        tabPerso[numPerso].stPerso.PA = pa;
+        tabPerso[numPerso].stPerso.PM = pm;
+        tabPerso[numPerso].stPerso.categ = categ;
+        
+    fclose(fic);
+}
 
 /**
  * \fn void charger_personnage(SDL_Window * pWindow, char * nomFNiveau)

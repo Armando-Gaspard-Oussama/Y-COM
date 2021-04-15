@@ -1,5 +1,6 @@
 #include "../../lib/affichage.h"
 #include "../../lib/commun.h"
+#include "../../lib/Struct_perso.h"
 #include "../../lib/niveaux.h"
 #include "../../lib/deplacement.h"
 #include "../../lib/combat.h"
@@ -11,9 +12,10 @@ int main(int argc, char **argv){
     int nbPerso=0;
     SDL_Window * window;
     SDL_Texture * niveau;
-    t_pers pers ={"Test",5,9,0,100,0,0,3,2,0};
-    t_pers pers1={"Test",6,4,0,100,0,0,6,5,0};
-    tabPerso[0].stPerso = pers;
+    t_pers pers;
+    charger_stat_perso(tabPerso,1,0);
+    printf("%s %d",tabPerso[0].stPerso.nom,tabPerso[0].stPerso.HP);
+    /*t_pers pers1={"Test",6,4,0,25,0,0,6,5,3};
     tabPerso[1].stPerso = pers1;
     int erreur=0;
     niveau_t niv;
@@ -22,24 +24,22 @@ int main(int argc, char **argv){
     int mat[9][16]={0};
     window=creation_fenetre_renderer("test",&rend);
 
-    /*niveau=charger_niveau(window,"../../media/sprites/niv_06.png",rend);
+    niveau=charger_niveau(window,"../../media/sprites/niv_06.png",rend);
     chargement_contenu_niveau(niv,"../../media/niveaux/06.niv");
     
-    charger_personnage(window,"./perso.png",rend,tabPerso,&nbPerso,niv);
-    charger_personnage(window,"./perso.png",rend,tabPerso,&nbPerso,niv);
+    charger_personnage(window,"../../media/sprites/perso2.png",rend,tabPerso,&nbPerso,niv);
+    charger_personnage(window,"../../media/sprites/perso3.png",rend,tabPerso,&nbPerso,niv);
 
-    
-
-
+    phaseAttaque(tabPerso,0,niv,nbPerso);
 
 
     SDL_Delay(1000);
     SDL_DestroyTexture(niveau);
     SDL_DestroyTexture(tabPerso[0].Tex);
-    SDL_DestroyTexture(tabPerso[1].Tex);*/
+    SDL_DestroyTexture(tabPerso[1].Tex);
     SDL_DestroyRenderer(rend);
     SDL_DestroyWindow(window);
   
-    SDL_Quit();
+    SDL_Quit();*/
     return 0;
 }

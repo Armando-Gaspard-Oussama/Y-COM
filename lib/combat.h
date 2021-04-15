@@ -14,5 +14,6 @@
 
     void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPerso);
 
+    int finCombat(t_texperso tabPerso[], int nbPerso);
 
 #endif

@@ -69,3 +69,11 @@
 	- [x] Gestion des barrieres
 - [x] Documentation
 - [ ] Conditions de fin de combats
+
+### Séance 2021/04/15
+
+- [x] Combat
+	- [x] Conditions de fin de combat
+- [ ] IA
+- [x] Menu quitter
+- [ ] Barre de PV

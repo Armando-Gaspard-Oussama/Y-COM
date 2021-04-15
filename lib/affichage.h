@@ -29,4 +29,6 @@
     void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso,niveau_t niv);
 
     void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso);
+
+    void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso);
 #endif

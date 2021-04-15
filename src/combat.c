@@ -75,13 +75,33 @@ int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fi
 
     return -1; //Si l attaque n est pas bloquer par une barriere
 }
+/**
+ * \fn int est_mort(t_texperso tabPerso[], int numeroPerso)
+ * \brief Verifie si un personnage est mort
+ * \param tabPerso 
+ */
 
 int est_mort(t_texperso tabPerso[], int numeroPerso){
-    return tabPerso[numeroPerso].stPerso.HP==0;
+    return tabPerso[numeroPerso].stPerso.HP<=0;
 }
 
-int finDePartie(t_texperso tabPerso[], int nbPerso){
-    
+int finCombat(t_texperso tabPerso[], int nbPerso){
+    int ennemie=0,allie=0;
+    int i;
+    for (i=0;i<nbPerso;i++){
+        if(!est_mort(tabPerso,i)){
+            if(tabPerso[i].stPerso.categ==3){
+                ennemie++;
+
+            }else{
+                allie++;
+
+            }
+
+        }
+
+    }
+    return ennemie==0 || allie==0;
 }
 
 /**
@@ -137,6 +157,9 @@ void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPe
 
     printf("%d degats infligé \n",degats);
 
-    printf("Le personnage %d inflige %d degats a l'ennemie %d\n",numeroPerso,degats,numEnnemie);
+    printf("Le personnage %d inflige %d degats a l'ennemie %d\n Il lui reste %d HP \n",numeroPerso,degats,numEnnemie,tabPerso[numEnnemie].stPerso.HP);
 
+    if(finCombat(tabPerso,nbPerso)){
+        printf("C'est la fin du combat");
+    }
 }
