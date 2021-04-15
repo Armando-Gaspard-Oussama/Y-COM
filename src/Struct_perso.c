@@ -9,11 +9,7 @@
  */
 
 #include "../lib/commun.h"
-<<<<<<< HEAD
 #include "../lib/Struct_perso.h"
-=======
-#include "../lib/struct.h"
->>>>>>> 08ba5c08cdc55b59329854ea9e80bc2123afceb2
 #include "../lib/affichage.h"
 
 /**
@@ -90,48 +86,6 @@ void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab){
 
 
 /**
- * \fn charger_stat_perso(t_texperso tabPerso[], int numPerso, char * nomFPerso)
- * \brief stock les informations sur les personnages dans un tableau de personnages
- * \param nomFPerso nom du fichier contenant les objets
- * \param numpPerso nombre de personnages dans le fichier
- * \param tabPerso tableau sur la structure pers pour stocker toutes les valeurs
- */
-void charger_stat_perso(t_texperso tabPerso[], int numPerso, char * nomFPerso){
-
-    FILE* fic;
-    fic = fopen(nomFPerso, "r");
-
-    char * nom_pers;
-
-    int att,def,hp,pa,pm,poids;
-
-    for (int i=0 ; i<numPerso ; i++){
-
-        fscanf(fic,"nom : %s", nom_pers);
-        fscanf(fic,"poids : %s", &poids_inv_max);
-        fscanf(fic,"ATT : %i", &attaque);
-        fscanf(fic,"DEF : %i", &defense);
-        fscanf(fic,"HP_obj : %i", &HP);
-        fscanf(fic,"PA_obj : %i", &PA);
-        fscanf(fic,"PM_obj : %i", &PM);
-        fscanf(fic,"categ : %i", &categ);
-
-        
-        strcpy(nom_pers,tab[i].nom);
-        tabPerso[i].poids = poids;
-        tabPerso[i].attaque = att;
-        tabPerso[i].defense = def;
-        tabPerso[i].HP = hp;
-        tabPerso[i].PA = pa;
-        tabPerso[i].PM = pm;
-        tabPerso[i].ceteg = categ;
-        
-    }
-    
-    fclose(fic);
-}
-
-/**
  * \fn void afficher_arme(t_objet* obj, int num)
  * \brief affiche les informations sur les armes
  * \param obj pointeur sur la structure objet contenant les informations sur les différentes armes
@@ -176,8 +130,4 @@ void perso_stat(t_pers* pers, t_objet * objet){
     pers->PA += objet->PA_obj;
     pers->PM += objet->PM_obj;
 
-<<<<<<< HEAD
 } 
-=======
-} 
->>>>>>> 08ba5c08cdc55b59329854ea9e80bc2123afceb2

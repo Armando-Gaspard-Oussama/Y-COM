@@ -12,10 +12,9 @@ int main(int argc, char **argv){
     int nbPerso=0;
     SDL_Window * window;
     SDL_Texture * niveau;
-    t_pers pers;
-    charger_stat_perso(tabPerso,1,0);
-    printf("%s %d",tabPerso[0].stPerso.nom,tabPerso[0].stPerso.HP);
-    /*t_pers pers1={"Test",6,4,0,25,0,0,6,5,3};
+    t_pers pers={"Test",6,4,0,25,0,0,3,2,3};
+    t_pers pers1={"Test",6,4,0,25,0,0,6,5,3};
+    tabPerso[0].stPerso = pers;
     tabPerso[1].stPerso = pers1;
     int erreur=0;
     niveau_t niv;
@@ -30,6 +29,12 @@ int main(int argc, char **argv){
     charger_personnage(window,"../../media/sprites/perso2.png",rend,tabPerso,&nbPerso,niv);
     charger_personnage(window,"../../media/sprites/perso3.png",rend,tabPerso,&nbPerso,niv);
 
+    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
+    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
+    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
+    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
+    
+
     phaseAttaque(tabPerso,0,niv,nbPerso);
 
 
@@ -40,6 +45,6 @@ int main(int argc, char **argv){
     SDL_DestroyRenderer(rend);
     SDL_DestroyWindow(window);
   
-    SDL_Quit();*/
+    SDL_Quit();
     return 0;
 }

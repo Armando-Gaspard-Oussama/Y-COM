@@ -5,20 +5,12 @@
 
 #include "./commun.h"
 
-<<<<<<< HEAD
     #include "./commun.h"
     
     /**
      * \file struct.h
      * \brief Définitions des types et fonctions relatifs aux objets et personnages
      */
-=======
-/**
- * \file struct.h
- * \brief Définitions des types et fonctions relatifs aux objets et personnages
- */
-
->>>>>>> 08ba5c08cdc55b59329854ea9e80bc2123afceb2
 
 typedef enum{
     sniper,
@@ -33,6 +25,8 @@ typedef struct{
     int poids_inv_max;
     int attaque;
     int defense;
+    int pos_X;
+    int pos_Y;
     int HP;
     int PA;
     int PM;
@@ -55,13 +49,6 @@ void afficher_arme(t_objet* obj, int num);
 
 void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab);
 
-void charger_stat_perso(t_texperso tabPerso[], int numPerso, char * nomFPerso);
-
-<<<<<<< HEAD
-
-    void perso_stat(t_pers* pers, t_objet * objet);
-
-=======
 void perso_stat(t_pers* pers, t_objet * objet);
->>>>>>> 08ba5c08cdc55b59329854ea9e80bc2123afceb2
+
 #endif
