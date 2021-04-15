@@ -1,4 +1,4 @@
 tutogit.sh
 src/*.o
 src/test/*.o
-
+src/test/*.exe

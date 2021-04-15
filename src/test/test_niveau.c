@@ -4,7 +4,7 @@
 #include "../../lib/deplacement.h"
 #include "../../lib/combat.h"
 
-int main(){
+int main(int argc, char **argv){
 
     t_texperso tabPerso[20];
     SDL_Renderer * rend;

@@ -44,7 +44,7 @@ int getNumEnnemie(t_texperso tabPerso[],int x, int y, int nbPerso){
  * \param y_fin Position y de la destination de l'attaque
  * \return Un booleen
  */
-int traverseBarriere(niveau_t mat[9][16], int x_debut, int y_debut, int x_fin, int y_fin){
+int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fin){
     int signeX;
     int signeY;
     int i;
