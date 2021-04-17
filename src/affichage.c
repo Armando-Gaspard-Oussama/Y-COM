@@ -48,6 +48,53 @@ SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer ** rend){
 }
 
 /**
+ * \fn void affichageHP(t_texperso tabperso[], SDL_Renderer * rend,int numPerso, TTF_Font * font)
+ * \brief Affiche le nom et les HP d un personnage
+ * \param tabperso tableau sur la structure pers pour stocker toutes les valeurs et les textures
+ * \param render Pointeur sur le renderer ratacher a la fenetre de jeu
+ * \param font Police d ecriture du nom et des HP affichées
+ */
+
+void affichageHP(t_texperso tabperso[], SDL_Renderer * rend,int numPerso, TTF_Font * font){
+  SDL_Rect HPRect;
+  SDL_Rect NomRect;
+  SDL_Surface * textSurface;
+  SDL_Surface * NomSurface;
+  SDL_Color Couleur;
+  
+  char nombre[3]="";
+  char texte[10]="HP :";
+  sprintf(nombre,"%i",tabperso[numPerso].stPerso.HP);
+  strcat(texte,nombre);
+  
+  HPRect.x = tabperso[numPerso].stPerso.pos_X*64;
+  HPRect.y = tabperso[numPerso].stPerso.pos_Y*64;
+  HPRect.w = 50;
+  HPRect.h = 20;
+
+  NomRect.x = (tabperso[numPerso].stPerso.pos_X*64);
+  NomRect.y = (tabperso[numPerso].stPerso.pos_Y*64)+30;
+  NomRect.w = 50;
+  NomRect.h = 20;
+ 
+  Couleur.r=0;
+  Couleur.g=0;
+  Couleur.b=0;
+
+  textSurface = TTF_RenderText_Blended(font,texte,Couleur);
+  NomSurface = TTF_RenderText_Blended(font,tabperso[numPerso].stPerso.nom,Couleur);
+
+  tabperso[numPerso].HP= SDL_CreateTextureFromSurface(rend,textSurface);
+  tabperso[numPerso].Nom = SDL_CreateTextureFromSurface(rend,NomSurface);
+
+  SDL_FreeSurface(NomSurface);
+  SDL_FreeSurface(textSurface);
+
+  SDL_RenderCopy(rend,tabperso[numPerso].Nom,NULL,&NomRect);
+  SDL_RenderCopy(rend,tabperso[numPerso].HP,NULL,&HPRect);
+}
+
+/**
  * \fn void charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Renderer * renderer)
  * \brief Charge un niveau
  * \author Armando Costa
@@ -90,41 +137,27 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
  * \param nomFPerso nom du fichier contenant les objets
  * \param numpPerso nombre de personnages dans le fichier
  * \param tabPerso tableau sur la structure pers pour stocker toutes les valeurs
+ * \param posX Position X ou le personnage va être placé
+ * \param posY Position Y ou le personnage va être placé
  */
-void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso){
+void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso,int posX, int posY){
 
-    FILE* fic;
-    fic = fopen("../../media/personnagesEtArmes/pers.txt", "r");
+  FILE* fic;
+  fic = fopen("../../media/personnagesEtArmes/pers.txt", "r");
 
-    char * nom_pers;
+  t_pers pers;
+  pers.pos_X=posX;
+  pers.pos_Y=posY;
 
-    int att,def,hp,pa,pm,poids,categ;
+  int i;
 
-    int i;
+  for (i=0 ; i<=catego ; i++){
+    fscanf(fic,"nom : %s\npoids : %i\nattaque : %i\ndefense : %i\nHP : %i\nPA : %i\nPM : %i\ncateg : %d\n",pers.nom,&pers.poids_inv_max,&pers.attaque,&pers.defense,&pers.HP,&pers.PA,&pers.PM,&pers.categ);
+  }
 
-    for (i=0 ; i<catego ; i++){
-
-        fscanf(fic,"nom : %s", nom_pers);
-        fscanf(fic,"poids : %s", &poids);
-        fscanf(fic,"ATT : %i", &att);
-        fscanf(fic,"DEF : %i", &def);
-        fscanf(fic,"HP_obj : %i", &hp);
-        fscanf(fic,"PA_obj : %i", &pa);
-        fscanf(fic,"PM_obj : %i", &pm);
-        fscanf(fic,"categ : %i", &categ);
-
-    }
-
-        strcpy(nom_pers,tabPerso[numPerso].stPerso.nom);
-        tabPerso[numPerso].stPerso.poids_inv_max = poids;
-        tabPerso[numPerso].stPerso.attaque = att;
-        tabPerso[numPerso].stPerso.defense = def;
-        tabPerso[numPerso].stPerso.HP = hp;
-        tabPerso[numPerso].stPerso.PA = pa;
-        tabPerso[numPerso].stPerso.PM = pm;
-        tabPerso[numPerso].stPerso.categ = categ;
-        
-    fclose(fic);
+  tabPerso[numPerso].stPerso=pers;
+    
+  fclose(fic);
 }
 
 /**
@@ -136,10 +169,10 @@ void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso){
  * \param renderer Pointeur sur le renderer ratacher a la fenetre pWindow
  * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
  * \param numeroPerso Le nombre de personnage dans le tableau
- * \param nib Matrice decrivant le niveau
+ * \param niv Matrice decrivant le niveau
+ * \param font Police d ecriture du nom et des HP affichées
  */
-
-void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso,niveau_t niv){
+void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso,niveau_t niv, TTF_Font * font){
   SDL_Rect imgDestRect;
   SDL_RWops *rwop=SDL_RWFromFile(nomFPersonnage,"rb");
   SDL_Surface *image;
@@ -159,12 +192,15 @@ void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Rendere
 
   SDL_QueryTexture(tabPerso[*numeroPerso].Tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
   SDL_RenderCopy(renderer, tabPerso[*numeroPerso].Tex, NULL, &imgDestRect);
+  affichageHP(tabPerso,renderer,(*numeroPerso),font);
 
   SDL_RenderPresent(renderer);
   SDL_RWclose(rwop);
 
   (*numeroPerso)++;
 }
+
+
 
 /**
  * \fn void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso)
@@ -175,9 +211,11 @@ void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Rendere
  * \param rend Pointeur sur le renderer ratacher a la fenetre pWindow
  * \param Texniv Texture du niveau
  * \param nbPerso Le nombre de personnage dans le tableau
+ * \param font Police d ecriture du nom et des HP affichées
  */
 
-void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso){
+void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso,TTF_Font * font){
+
   SDL_Rect persoPos;
   SDL_Rect nivPos;
   int i;
@@ -202,8 +240,30 @@ void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SD
 
     SDL_RenderCopy(rend,(tabPerso[i].Tex),NULL,&persoPos);
 
+    affichageHP(tabPerso,rend,i,font);
   }
 
 
   SDL_RenderPresent(rend);
+}
+
+
+void supprimerTexturePersonnage(t_texperso tabPerso[], int * nbPerso, int numeroPerso){
+  SDL_DestroyTexture(tabPerso[numeroPerso-1].HP);
+  SDL_DestroyTexture(tabPerso[numeroPerso-1].Nom);
+  SDL_DestroyTexture(tabPerso[numeroPerso-1].Tex);
+  (*nbPerso)--;
+}
+
+void supprimerToutPersonnage(t_texperso tabperso[], int * nbPerso){
+  while((*nbPerso)!=0){
+    supprimerTexturePersonnage(tabperso,nbPerso,(*nbPerso));
+  }
+}
+
+void toutSupprimer(t_texperso tabperso[], int * nbPerso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * niv){
+  SDL_DestroyTexture(niv);
+  supprimerToutPersonnage(tabperso,nbPerso);
+  SDL_DestroyRenderer(rend);
+  SDL_DestroyWindow(pWindow);
 }

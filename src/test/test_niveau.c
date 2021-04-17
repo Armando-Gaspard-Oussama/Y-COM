@@ -9,42 +9,37 @@ int main(int argc, char **argv){
 
     t_texperso tabPerso[20];
     SDL_Renderer * rend;
+    TTF_Init();
+    TTF_Font * font = TTF_OpenFont("../../media/font/ethno.ttf",200);
     int nbPerso=0;
     SDL_Window * window;
     SDL_Texture * niveau;
-    t_pers pers={"Test",6,4,0,25,0,0,3,2,3};
-    t_pers pers1={"Test",6,4,0,25,0,0,6,5,3};
-    tabPerso[0].stPerso = pers;
-    tabPerso[1].stPerso = pers1;
-    int erreur=0;
+    charger_stat_perso(tabPerso,2,0,3,2);
+    charger_stat_perso(tabPerso,3,1,6,5);
     niveau_t niv;
+    int mat[9][16]={0};
     SDL_Init(SDL_INIT_VIDEO);
 
-    int mat[9][16]={0};
     window=creation_fenetre_renderer("test",&rend);
 
     niveau=charger_niveau(window,"../../media/sprites/niv_06.png",rend);
     chargement_contenu_niveau(niv,"../../media/niveaux/06.niv");
     
-    charger_personnage(window,"../../media/sprites/perso2.png",rend,tabPerso,&nbPerso,niv);
-    charger_personnage(window,"../../media/sprites/perso3.png",rend,tabPerso,&nbPerso,niv);
+    charger_personnage(window,"../../media/sprites/perso2.png",rend,tabPerso,&nbPerso,niv,font);
+    charger_personnage(window,"../../media/sprites/ennemy.png",rend,tabPerso,&nbPerso,niv,font);
 
-    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
-    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
-    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
-    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso);
+    phase_deplacement(tabPerso,0,window,rend,niv,niveau,nbPerso,font);
     
-
     phaseAttaque(tabPerso,0,niv,nbPerso);
+    Update(tabPerso,window,rend,niveau,nbPerso,font);
 
 
     SDL_Delay(1000);
-    SDL_DestroyTexture(niveau);
-    SDL_DestroyTexture(tabPerso[0].Tex);
-    SDL_DestroyTexture(tabPerso[1].Tex);
-    SDL_DestroyRenderer(rend);
-    SDL_DestroyWindow(window);
-  
+    toutSupprimer(tabPerso,&nbPerso,window,rend,niveau);
+
+    printf("Tout se passe bien !");
+    
+    TTF_Init();
     SDL_Quit();
     return 0;
 }

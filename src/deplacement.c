@@ -170,9 +170,10 @@ void copie_chemin(int simp[9][16],int chemin[9][16]){
  * \param mat Matrice devriant le niveau
  * \param Texniv Texture du niveau
  * \param nbPerso Nombre total de personnage inscrit dans le tableau tabPerso
+ * \param font Police d ecriture du nom et des HP affichées
  */
 
-void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv, int nbPerso){
+void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv, int nbPerso, TTF_Font * font){
     int simpli[9][16]={0};
     int x_point=-1,y_point=-1;
     int flag =1;
@@ -206,5 +207,5 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
 
     mat[tabPerso[numPerso].stPerso.pos_Y][tabPerso[numPerso].stPerso.pos_X]=-1;
 
-    Update(tabPerso,pWindow,renderer,Texniv,nbPerso);
+    Update(tabPerso,pWindow,renderer,Texniv,nbPerso,font);
 }

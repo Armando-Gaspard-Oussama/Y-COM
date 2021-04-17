@@ -30,5 +30,5 @@
 
     int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin);
 
-    void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv,int nbPerso);
+    void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv,int nbPerso, TTF_Font * font);
 #endif

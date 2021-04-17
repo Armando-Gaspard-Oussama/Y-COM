@@ -1,6 +1,7 @@
 #include "../lib/combat.h"
 #include "../lib/niveaux.h"
 #include <time.h>
+#include <math.h>
 
 /**
  * \fn int est_perso(niveau_t mat, int x, int y)
@@ -45,12 +46,17 @@ int getNumEnnemie(t_texperso tabPerso[],int x, int y, int nbPerso){
  * \return Un booleen
  */
 int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fin){
-    int signeX;
-    int signeY;
-    int i;
+    int signeX=1;
+    int signeY=1;
+    int i;   
+
     
-    signeX=(x_fin-x_debut)/abs(x_fin-x_debut);
-    signeY=(y_fin-y_debut)/abs(y_fin-y_debut);
+    if(x_fin-x_debut <= 0){
+        signeX= -1;
+    }
+    if(y_fin-y_debut <= 0){
+        signeY= -1;
+    }
 
     if(x_debut == x_fin){
         for(i=0;i<abs(y_fin-y_debut);i++){
@@ -60,7 +66,6 @@ int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fi
             }
         }
     }
-
     if(y_debut == y_fin){
         for(i=0;i<abs(x_fin-x_debut);i++){
             i*=signeX;
@@ -69,22 +74,26 @@ int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fi
             }
         }
     }
-
-    
-
-
     return -1; //Si l attaque n est pas bloquer par une barriere
 }
 /**
  * \fn int est_mort(t_texperso tabPerso[], int numeroPerso)
  * \brief Verifie si un personnage est mort
- * \param tabPerso 
+ * \param tabPerso  Tableau contenant toute les information des personnages
+ * \param numeroPerso personnage dont on souhaite connaitre l'etat
  */
 
 int est_mort(t_texperso tabPerso[], int numeroPerso){
     return tabPerso[numeroPerso].stPerso.HP<=0;
 }
 
+
+/**
+ * \fn int finCombat(t_texperso tabPerso[], int nbPerso)
+ * \brief Verifie si tout les personnage d un camp sont mort
+ * \param tabPerso Tableau contenant toute les information des personnages
+ * \param nbPerso nombre total de personnage
+ */
 int finCombat(t_texperso tabPerso[], int nbPerso){
     int ennemie=0,allie=0;
     int i;
@@ -125,7 +134,7 @@ void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPe
         
         while(SDL_PollEvent(&event)){
             if(event.type == SDL_QUIT){
-                return ;
+                return;
 
             }
             if(event.type == SDL_MOUSEBUTTONDOWN){
@@ -147,7 +156,7 @@ void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPe
     }else{
         degats = rand()%(int)(tabPerso[numeroPerso].stPerso.attaque -(tabPerso[numeroPerso].stPerso.attaque*0.7)) + (int)(tabPerso[numeroPerso].stPerso.attaque*0.7); //Degats peuvent etre fait entre [70%;100%] de l'attaque initial du personnage
     }
-    printf("%d\n",traverseBarriere(mat,tabPerso[numeroPerso].stPerso.pos_X,tabPerso[numeroPerso].stPerso.pos_Y,x_point,y_point));
+
     if(traverseBarriere(mat,tabPerso[numeroPerso].stPerso.pos_X,tabPerso[numeroPerso].stPerso.pos_Y,x_point,y_point)==1){
         degats -= (degats*0.5);
         printf("Le coup traverse une barriere\n");
