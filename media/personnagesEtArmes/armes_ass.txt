@@ -1,0 +1,25 @@
+Nom : AK47
+Poids : 12
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7
+
+
+Nom : Famas
+Poids : 11
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7
+
+
+Nom : MP4
+Poids : 8
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7

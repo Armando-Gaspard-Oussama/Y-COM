@@ -1,0 +1,25 @@
+Nom : Balisong
+Poids : 6
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7
+
+
+Nom : Balistique
+Poids : 5
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7
+
+
+Nom : Bowie
+Poids : 7
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7

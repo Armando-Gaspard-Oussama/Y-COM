@@ -1,0 +1,25 @@
+Nom : M24
+Poids : 12
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7
+
+
+Nom : Mosin-Nagant
+Poids : 10
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7
+
+
+Nom : M98b
+Poids : 9
+ATT : 5
+DEF : 3
+HP_obj : 10
+PA_obj : 2
+PM_obj : 7
