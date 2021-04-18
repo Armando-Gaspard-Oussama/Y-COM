@@ -8,7 +8,7 @@
 
 typedef struct room {
 	int open_doors;
-	int doors[4]; // index:  0=North,1=Est,2=South,3=West
+	int doors[4]; // index:  0=Nord,1=Est,2=Sud,3=Ouest
 } Room;
 
 typedef struct lab_room {
