@@ -1,3 +1,12 @@
+  
+/**
+ * \file labyrinthe_niveau.c
+ * \brief Fonctions pour la création d'un labyrinthe de niveau
+ * Création aléatoire de nouvelles pièces et des portes ouverte possible et affichages de celles-ci
+ * Structure dans le fichier labyrinthe_niveau.h
+ * \sa labyrinthe_niveau.h
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
