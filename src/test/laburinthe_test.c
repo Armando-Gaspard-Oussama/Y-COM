@@ -6,16 +6,6 @@
 #include "../lib/labyrinthe_niveau.h"
 #include "../lib/commun.h"
 
-
-/**
- * \fn Lab_Room *rand_room(Room m[MAX_ROWS][MAX_COL], Lab_Room *L, int n)
- * \brief Générer aléatoirement une pièce
- * \author Belkadi Oussama
- * \param m matrice de taille nombre max de ligne , max de colonne
- * \param L pointeur sur la structure b_room
- * \param n nombre de pièce dans le niveau
- */
-
 int main(int argc, char *argv[]) {
 
   Room Map[MAX_ROWS][MAX_COL];   
@@ -28,9 +18,8 @@ int main(int argc, char *argv[]) {
 
   memset(Map,0,MAX_ROWS*MAX_COL*sizeof(Room));
 
-  if (argc > 1) { nb_rooms = atoi(argv[1]); } // check nb_rooms < sqrt(MAX_ROWS)
+  if (argc > 1) { nb_rooms = atoi(argv[1]); } // nb_rooms < sqrt(MAX_ROWS)
 
-  //printf("nb rooms = %d\n",nb_rooms);
  
   Lab = (Lab_Room *)malloc(sizeof(Lab_Room));
   Lab->pos_x=nb_rooms;
@@ -41,7 +30,6 @@ int main(int argc, char *argv[]) {
 	ri=rand_room(Map,Lab,nb_current_rooms);
 	nr=add_door(Map,ri);
 	if (nr!=NULL) {
-		//printf("Adding new Room(%d,%d) to Room list\n",nr->pos_x,nr->pos_y);
 		nr->next=Lab;
 		Lab=nr;
     	nb_current_rooms++;
