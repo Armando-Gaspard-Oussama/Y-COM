@@ -1,7 +1,4 @@
 #include "../lib/combat.h"
-#include "../lib/niveaux.h"
-#include <time.h>
-#include <math.h>
 
 /**
  * \fn int est_perso(niveau_t mat, int x, int y)

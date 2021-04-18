@@ -1,6 +1,6 @@
 #ifndef __NIVEAUX_H__
 #define __NIVEAUX_H__
-
+    #include "./commun.h"
     /**
      * \file niveaux.h
      * \brief Définitions des types et fonctions relatifs aux niveaux

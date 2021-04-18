@@ -12,8 +12,10 @@
 
     int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fin);
 
-    void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPerso);
+    int est_mort(t_texperso tabPerso[], int numeroPerso);
 
     int finCombat(t_texperso tabPerso[], int nbPerso);
+
+    void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPerso);
 
 #endif

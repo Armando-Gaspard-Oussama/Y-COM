@@ -8,7 +8,6 @@
 
 #include "../lib/affichage.h"
 #include "../lib/commun.h"
-#include <stdio.h>
 
 SDL_Texture * menu_quitter(SDL_Window * pWindow){
 

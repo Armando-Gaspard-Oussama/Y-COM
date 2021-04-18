@@ -7,10 +7,7 @@
  * Structure dans le fichier struct.h
  * \sa struct.h
  */
-
-#include "../lib/commun.h"
 #include "../lib/Struct_perso.h"
-#include "../lib/affichage.h"
 
 /**
  * \fn void afficher_perso_jouant(t_pers* pers, int num)

@@ -1,8 +1,5 @@
 #include "../lib/affichage.h"
-#include "../lib/commun.h"
 #include "../lib/niveaux.h"
-#include "../lib/Struct_perso.h"
-#include <stdio.h>
 
 /**
  * \file affichage.c
@@ -247,6 +244,13 @@ void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SD
   SDL_RenderPresent(rend);
 }
 
+/**
+ * \fn void supprimerTexturePersonnage(t_texperso tabPerso[], int * nbPerso, int numeroPerso)
+ * \brief Supprime toute les textures lié a un personnage
+ * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
+ * \param nbPerso Pointeur sur le nombre total de personnage
+ * \param numeroPerso Indice du personnage dans le tableau tabPerso dont on veut supprimer les Texture
+ */
 
 void supprimerTexturePersonnage(t_texperso tabPerso[], int * nbPerso, int numeroPerso){
   SDL_DestroyTexture(tabPerso[numeroPerso-1].HP);
@@ -255,12 +259,27 @@ void supprimerTexturePersonnage(t_texperso tabPerso[], int * nbPerso, int numero
   (*nbPerso)--;
 }
 
+/**
+ * \fn void supprimerToutPersonnage(t_texperso tabperso[], int * nbPerso)
+ * \brief Supprime les textures de tout les personnages
+ * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
+ * \param nbPerso Pointeur sur le nombre total de personnage
+ */
 void supprimerToutPersonnage(t_texperso tabperso[], int * nbPerso){
   while((*nbPerso)!=0){
     supprimerTexturePersonnage(tabperso,nbPerso,(*nbPerso));
   }
 }
 
+/**
+ * \fn void toutSupprimer(t_texperso tabperso[], int * nbPerso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * niv)
+ * \brief Supprime toute les texture, renderer et fenetre 
+ * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
+ * \param nbPerso Pointeur sur le nombre total de personnage
+ * \param pWindow Pointeur sur la fenetre de jeu
+ * \param rend Pointeur sur le renderer ratacher a la fenetre pWindow
+ * \param niv Pointeur sur la Texture du niveau 
+ */
 void toutSupprimer(t_texperso tabperso[], int * nbPerso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * niv){
   SDL_DestroyTexture(niv);
   supprimerToutPersonnage(tabperso,nbPerso);

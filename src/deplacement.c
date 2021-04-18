@@ -1,9 +1,4 @@
 #include "../lib/deplacement.h"
-#include "../lib/niveaux.h"
-#include "../lib/Struct_perso.h"
-#include "../lib/affichage.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
  * \fn int disponible(niveau_t mat, int posX, int posY)
  * \brief Verifie si la case selectionner dans la matrice du niveau n'est pas hors limite et si cela est une porte ou si c est vide
@@ -91,33 +86,29 @@ int chercher_chemin_rec(int simp[9][16],int chemin[9][16],int x,int y, int x_fin
         return -1;
     }
 
-    if(est_vide(x,y,simp)==1){
-
-        if(chemin[x][y]==1){
-            return -1;
-        }
-
-        chemin[x][y]=1;
-
-        if(chercher_chemin_rec(simp,chemin,x+1,y,x_fin,y_fin,reccu,reccu_max) == 1){
-            return 1;
-        }
-
-        if(chercher_chemin_rec(simp,chemin,x,y+1,x_fin,y_fin,reccu,reccu_max) == 1){
-            return 1;
-        }
-
-        if(chercher_chemin_rec(simp,chemin,x-1,y,x_fin,y_fin,reccu,reccu_max) == 1){
-            return 1;
-        }
-
-        if(chercher_chemin_rec(simp,chemin,x,y-1,x_fin,y_fin,reccu,reccu_max) == 1){
-            return 1;
-        }
-
-        chemin[x][y] = 0;
+    if(chemin[x][y]==1 || chemin[x][y]==-1){
         return -1;
     }
+    chemin[x][y]=1;
+
+
+    if(chercher_chemin_rec(simp,chemin,x+1,y,x_fin,y_fin,reccu,reccu_max) == 1){
+        return 1;
+    }
+
+    if(chercher_chemin_rec(simp,chemin,x-1,y,x_fin,y_fin,reccu,reccu_max) == 1){
+        return 1;
+    }
+
+    
+    if(chercher_chemin_rec(simp,chemin,x,y+1,x_fin,y_fin,reccu,reccu_max) == 1){
+        return 1;
+    }
+
+    if(chercher_chemin_rec(simp,chemin,x,y-1,x_fin,y_fin,reccu,reccu_max) == 1){
+        return 1;
+    }
+    chemin[x][y]=0;
 
     return -1;
 }
@@ -132,13 +123,22 @@ int chercher_chemin_rec(int simp[9][16],int chemin[9][16],int x,int y, int x_fin
  * \param y_fin Coordonnes y ou on veut aller
  * \return Un booleen en fonction de si un chemin a ete trouver ou non
  */
-int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin){
+int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin,niveau_t niv){
     int chemin[9][16]={0};
-    if(chercher_chemin_rec(simp,chemin,x_debut,y_debut,x_fin,y_fin,0,3)==-1){
-        return -1;
+    simplication_mat(niv,chemin);
+    if(chercher_chemin_rec(simp,chemin,x_debut+1,y_debut,x_fin,y_fin,0,2)==1){
+        copie_chemin(simp,chemin);
+        return 1;
+    }else if(chercher_chemin_rec(simp,chemin,x_debut-1,y_debut,x_fin,y_fin,0,2)==1){
+        copie_chemin(simp,chemin);
+        return 1;
+    }else if(chercher_chemin_rec(simp,chemin,x_debut,y_debut+1,x_fin,y_fin,0,2)==1){
+        copie_chemin(simp,chemin);
+        return 1;
+    }else if(chercher_chemin_rec(simp,chemin,x_debut,y_debut-1,x_fin,y_fin,0,2)==1){
+        copie_chemin(simp,chemin);
+        return 1;
     }
-    copie_chemin(simp,chemin);
-    return 1;
 }
 
 
@@ -192,7 +192,7 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
                 x_point = event.button.x/64;
                 y_point = event.button.y/64;
                 if(est_vide(y_point,x_point,simpli)){
-                    if (chercher_chemin(simpli, tabPerso[numPerso].stPerso.pos_X, tabPerso[numPerso].stPerso.pos_Y, x_point, y_point)==1 ){
+                    if (chercher_chemin(simpli, tabPerso[numPerso].stPerso.pos_Y, tabPerso[numPerso].stPerso.pos_X, y_point, x_point,mat)==1 ){
                         flag=-1;
                     }
                 }   

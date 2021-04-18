@@ -9,8 +9,6 @@
  */
 
 #include "../lib/niveaux.h"
-#include "../lib/commun.h"
-#include <stdio.h>
 
 /**
  * \fn void chargement_contenu_niveau(carreau_t mat[9][16],char * nom_fichier)

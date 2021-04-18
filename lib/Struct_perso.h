@@ -4,8 +4,6 @@
 #define zxc
 
 #include "./commun.h"
-
-    #include "./commun.h"
     
     /**
      * \file struct.h

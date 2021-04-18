@@ -10,9 +10,8 @@
      * \author Armando Costa
      */
     #include "commun.h"
-    #include "niveaux.h"
-    #include "Struct_perso.h"
     #include "affichage.h"
+    #include "niveaux.h"
 
     int disponible(niveau_t mat, int posX, int posY);
 
@@ -28,7 +27,7 @@
 
     void copie_chemin(int simp[9][16],int chemin[9][16]);
 
-    int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin);
+    int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin,niveau_t niv);
 
     void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow, SDL_Renderer * renderer, niveau_t mat, SDL_Texture * Texniv,int nbPerso, TTF_Font * font);
 #endif

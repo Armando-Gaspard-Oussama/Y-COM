@@ -2,7 +2,7 @@ nom : Bill
 poids : 20
 attaque : 5
 defense : 3
-HP : 10
+HP : 100
 PA : 2
 PM : 7
 categ : 0

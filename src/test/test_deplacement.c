@@ -11,7 +11,7 @@ void test(int valeur, int attendu, int * reussi)
     }
     else
     {
-        printf("NOK\n");
+        printf("KO\n");
         *reussi = 0;
     }
 }
