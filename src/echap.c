@@ -1,3 +1,11 @@
+/**
+ * \file echap.c
+ * \brief Fonctions pour la création d'un menu quitter/continuer pendant une partie
+ * Affcihage d'un menu permettant de metre en pause ou quitter le jeu a l'aide des touches du clavier
+ * Structure dans le fichier affichage.h
+ * \sa affichage.h
+ */
+
 #include "../lib/affichage.h"
 #include "../lib/commun.h"
 #include <stdio.h>
