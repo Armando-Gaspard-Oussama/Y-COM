@@ -20,7 +20,7 @@
 SDL_Texture * menu_quitter(char * nom, SDL_Window * pWindow){
 
     int continuer = 3;
-    SDL_Event evenement;
+    SDL_Event event;
 
 
     pWindow = SDL_CreateWindow(nom,
@@ -40,9 +40,9 @@ SDL_Texture * menu_quitter(char * nom, SDL_Window * pWindow){
 
     if (event.key.keysym.sym == SDLK_ESCAPE){
         whle (continuer){
-            SDL_WaitEvent(&evenement);
+            SDL_WaitEvent(&event);
 
-            switch(evenement.type){ // si continuer =0 on quitte la sdl
+            switch(event.type){ // si continuer =0 on quitte la sdl
                 case SDL_QUIT:
                 continuer=0;
                 break;
