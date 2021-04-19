@@ -1,4 +1,13 @@
 #include "../lib/deplacement.h"
+
+/**
+ * \file deplacement.c
+ * \brief Toutes les fonctions  nécessaires au deplacement.
+ * \author Armando Costa
+ * \version 1.0
+ * \date 19/02/2021
+ */
+
 /**
  * \fn int disponible(niveau_t mat, int posX, int posY)
  * \brief Verifie si la case selectionner dans la matrice du niveau n'est pas hors limite et si cela est une porte ou si c est vide

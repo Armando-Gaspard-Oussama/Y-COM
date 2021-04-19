@@ -1,6 +1,14 @@
 #include "../lib/combat.h"
 
 /**
+ * \file combat.c
+ * \brief Toutes les fonctions  nécessaires au combat.
+ * \author Armando Costa
+ * \version 1.0
+ * \date 19/02/2021
+ */
+
+/**
  * \fn int est_perso(niveau_t mat, int x, int y)
  * \brief Verifie si la case indiquer comporte un personnage
  * \param mat Matrice decrivant le niveau

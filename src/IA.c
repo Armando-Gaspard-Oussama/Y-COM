@@ -1,5 +1,13 @@
 #include "../lib/IA.h"
 
+/**
+ * \file IA.c
+ * \brief Toutes les fonctions  nécessaires a l IA.
+ * \author Armando Costa
+ * \version 1.0
+ * \date 19/02/2021
+ */
+
 void affichermat(int mat[5][5]){
     int i,j;
     for(i=0;i<5;i++){
