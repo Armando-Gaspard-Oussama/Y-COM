@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['perso_9',['PERSO',['../niveaux_8h.html#a623f1bf347192fa632fa78f08575ee1fa4509e040003f25f0245d3e6e4f21525c',1,'niveaux.h']]],
-  ['porte_10',['PORTE',['../niveaux_8h.html#a623f1bf347192fa632fa78f08575ee1fa5fecb6baf7de2a6d107ee433b4c08616',1,'niveaux.h']]]
+  ['getnumennemie_19',['getNumEnnemie',['../combat_8c.html#a2ab23f0cf8f231a6e7c86f0972e2c3dd',1,'combat.c']]]
 ];

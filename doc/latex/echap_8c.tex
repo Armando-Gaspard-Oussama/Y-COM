@@ -1,0 +1,48 @@
+\hypertarget{echap_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/echap.c File Reference}
+\label{echap_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/echap.c@{C:/Users/armando/Desktop/Y-\/COM/src/echap.c}}
+
+
+Fonctions pour la création d\textquotesingle{}un menu quitter/continuer pendant une partie Affcihage d\textquotesingle{}un menu permettant de metre en pause ou quitter le jeu a l\textquotesingle{}aide des touches du clavier Structure dans le fichier affichage.\+h.  
+
+
+{\ttfamily \#include \char`\"{}../lib/affichage.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lib/commun.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{echap_8c_a1eda41ee71d1f83c18eb70bf046c15dd}{menu\+\_\+quitter}} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, SDL\+\_\+\+Window $\ast$p\+Window, SDL\+\_\+\+Renderer $\ast$rend, SDL\+\_\+\+Texture $\ast$Tex\+Menu, int nb\+Perso)
+\begin{DoxyCompactList}\small\item\em Ouvre une fenêtre à l\textquotesingle{}aide de la SDL2 et affecte un renderer à cette fenêtre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fonctions pour la création d\textquotesingle{}un menu quitter/continuer pendant une partie Affcihage d\textquotesingle{}un menu permettant de metre en pause ou quitter le jeu a l\textquotesingle{}aide des touches du clavier Structure dans le fichier affichage.\+h. 
+
+\begin{DoxySeeAlso}{See also}
+affichage.\+h 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{echap_8c_a1eda41ee71d1f83c18eb70bf046c15dd}\label{echap_8c_a1eda41ee71d1f83c18eb70bf046c15dd}} 
+\index{echap.c@{echap.c}!menu\_quitter@{menu\_quitter}}
+\index{menu\_quitter@{menu\_quitter}!echap.c@{echap.c}}
+\doxysubsubsection{\texorpdfstring{menu\_quitter()}{menu\_quitter()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Texture $\ast$ menu\+\_\+quitter (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tab\+Perso\mbox{[}$\,$\mbox{]},  }\item[{SDL\+\_\+\+Window $\ast$}]{p\+Window,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{rend,  }\item[{SDL\+\_\+\+Texture $\ast$}]{Tex\+Menu,  }\item[{int}]{nb\+Perso }\end{DoxyParamCaption})}
+
+
+
+Ouvre une fenêtre à l\textquotesingle{}aide de la SDL2 et affecte un renderer à cette fenêtre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Window} & Pointeur sur la fenêtre déjà ouverte \\
+\hline
+{\em rend} & Pointeur sur le renderer qui sera affecté à la fenêtre genérée \\
+\hline
+{\em tab\+Perso} & tableau contenant tout les personnage ainsi que leur texture \\
+\hline
+{\em nb\+Perso} & Le nombre de personnage dans le tableau \\
+\hline
+{\em Texniv} & Texture du menu \\
+\hline
+\end{DoxyParams}

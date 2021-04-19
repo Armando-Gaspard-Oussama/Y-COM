@@ -1,0 +1,74 @@
+\hypertarget{labyrinthe__niveau_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/labyrinthe\+\_\+niveau.c File Reference}
+\label{labyrinthe__niveau_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/labyrinthe\_niveau.c@{C:/Users/armando/Desktop/Y-\/COM/src/labyrinthe\_niveau.c}}
+
+
+Fonctions pour la création d\textquotesingle{}un labyrinthe de niveau Création aléatoire de nouvelles pièces et des portes ouverte possible et affichages de celles-\/ci Structure dans le fichier labyrinthe\+\_\+niveau.\+h.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../lib/labyrinthe\+\_\+niveau.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lib/commun.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Lab\+\_\+\+Room $\ast$ \mbox{\hyperlink{labyrinthe__niveau_8c_afa9d70b5d4002744aa91ea9ff040a539}{rand\+\_\+room}} (Room m\mbox{[}MAX\+\_\+\+ROWS\mbox{]}\mbox{[}MAX\+\_\+\+COL\mbox{]}, Lab\+\_\+\+Room $\ast$L, int n)
+\begin{DoxyCompactList}\small\item\em Générer aléatoirement une pièce. \end{DoxyCompactList}\item 
+Lab\+\_\+\+Room $\ast$ \mbox{\hyperlink{labyrinthe__niveau_8c_abe249ee77870e70962ac3caa0ca35214}{add\+\_\+door}} (Room m\mbox{[}MAX\+\_\+\+ROWS\mbox{]}\mbox{[}MAX\+\_\+\+COL\mbox{]}, Lab\+\_\+\+Room $\ast$r)
+\begin{DoxyCompactList}\small\item\em Ajouter des portes aux pièces. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{labyrinthe__niveau_8c_ae8649bc5884826b1ef6c1e9ed8a4ede7}\label{labyrinthe__niveau_8c_ae8649bc5884826b1ef6c1e9ed8a4ede7}} 
+void {\bfseries print\+\_\+lab} (Room m\mbox{[}MAX\+\_\+\+ROWS\mbox{]}\mbox{[}MAX\+\_\+\+COL\mbox{]}, Lab\+\_\+\+Room $\ast$r)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fonctions pour la création d\textquotesingle{}un labyrinthe de niveau Création aléatoire de nouvelles pièces et des portes ouverte possible et affichages de celles-\/ci Structure dans le fichier labyrinthe\+\_\+niveau.\+h. 
+
+\begin{DoxySeeAlso}{See also}
+labyrinthe\+\_\+niveau.\+h 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{labyrinthe__niveau_8c_abe249ee77870e70962ac3caa0ca35214}\label{labyrinthe__niveau_8c_abe249ee77870e70962ac3caa0ca35214}} 
+\index{labyrinthe\_niveau.c@{labyrinthe\_niveau.c}!add\_door@{add\_door}}
+\index{add\_door@{add\_door}!labyrinthe\_niveau.c@{labyrinthe\_niveau.c}}
+\doxysubsubsection{\texorpdfstring{add\_door()}{add\_door()}}
+{\footnotesize\ttfamily Lab\+\_\+\+Room $\ast$ add\+\_\+door (\begin{DoxyParamCaption}\item[{Room}]{m\mbox{[}\+MAX\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAX\+\_\+\+COL\mbox{]},  }\item[{Lab\+\_\+\+Room $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+Ajouter des portes aux pièces. 
+
+Afficher les pièces.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & matrice de taille nombre max de ligne , max de colonne \\
+\hline
+{\em r} & pointeur sur la structure b\+\_\+room \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{labyrinthe__niveau_8c_afa9d70b5d4002744aa91ea9ff040a539}\label{labyrinthe__niveau_8c_afa9d70b5d4002744aa91ea9ff040a539}} 
+\index{labyrinthe\_niveau.c@{labyrinthe\_niveau.c}!rand\_room@{rand\_room}}
+\index{rand\_room@{rand\_room}!labyrinthe\_niveau.c@{labyrinthe\_niveau.c}}
+\doxysubsubsection{\texorpdfstring{rand\_room()}{rand\_room()}}
+{\footnotesize\ttfamily Lab\+\_\+\+Room $\ast$ rand\+\_\+room (\begin{DoxyParamCaption}\item[{Room}]{m\mbox{[}\+MAX\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAX\+\_\+\+COL\mbox{]},  }\item[{Lab\+\_\+\+Room $\ast$}]{L,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Générer aléatoirement une pièce. 
+
+\begin{DoxyAuthor}{Author}
+Belkadi Oussama 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & matrice de taille nombre max de ligne , max de colonne \\
+\hline
+{\em L} & pointeur sur la structure b\+\_\+room \\
+\hline
+{\em n} & nombre de pièce dans le niveau \\
+\hline
+\end{DoxyParams}

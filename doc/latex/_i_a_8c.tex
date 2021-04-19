@@ -1,0 +1,127 @@
+\hypertarget{_i_a_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/\+IA.c File Reference}
+\label{_i_a_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/IA.c@{C:/Users/armando/Desktop/Y-\/COM/src/IA.c}}
+
+
+Toutes les fonctions nécessaires a l IA.  
+
+
+{\ttfamily \#include \char`\"{}../lib/\+IA.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_i_a_8c_ab15a8db12cae78c76df8577c9b2e44d8}\label{_i_a_8c_ab15a8db12cae78c76df8577c9b2e44d8}} 
+void {\bfseries affichermat} (int mat\mbox{[}5\mbox{]}\mbox{[}5\mbox{]})
+\item 
+void \mbox{\hyperlink{_i_a_8c_af1dcaa405f92b50338b058c5184d8b77}{indice\+Max\+Matrice}} (int mat\mbox{[}5\mbox{]}\mbox{[}5\mbox{]}, int $\ast$x, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Trouve les indice de la valeur la plus grande de la matrice. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_i_a_8c_a9904b06045da5b29251fb626d9a6b260}{evaluation\+Deplacement}} (niveau\+\_\+t mat, int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne une valeur arbritraire définissant si cela vaut le coup de se deplace a la case passer en paramatre. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_i_a_8c_a25b16b89863966d468df55ecd589789a}{plus\+Bas\+Vie}} (t\+\_\+texperso tabperso\mbox{[}$\,$\mbox{]}, int nb\+Perso)
+\begin{DoxyCompactList}\small\item\em Trouve le personnage joueur qui a le moins de vie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i_a_8c_aa9e1b225382ec0a1742acf8505be301a}{IA}} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int numero\+Perso, niveau\+\_\+t mat, SDL\+\_\+\+Window $\ast$p\+Window, SDL\+\_\+\+Renderer $\ast$rend, TTF\+\_\+\+Font $\ast$font, int nbperso, SDL\+\_\+\+Texture $\ast$text\+Niv)
+\begin{DoxyCompactList}\small\item\em Tout le deroulement d une partie de jeu d\textquotesingle{}une IA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Toutes les fonctions nécessaires a l IA. 
+
+\begin{DoxyAuthor}{Author}
+Armando Costa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19/02/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_i_a_8c_a9904b06045da5b29251fb626d9a6b260}\label{_i_a_8c_a9904b06045da5b29251fb626d9a6b260}} 
+\index{IA.c@{IA.c}!evaluationDeplacement@{evaluationDeplacement}}
+\index{evaluationDeplacement@{evaluationDeplacement}!IA.c@{IA.c}}
+\doxysubsubsection{\texorpdfstring{evaluationDeplacement()}{evaluationDeplacement()}}
+{\footnotesize\ttfamily int evaluation\+Deplacement (\begin{DoxyParamCaption}\item[{niveau\+\_\+t}]{mat,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Retourne une valeur arbritraire définissant si cela vaut le coup de se deplace a la case passer en paramatre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrice decrivant le niveau \\
+\hline
+{\em x} & Position x de la case ou l evaluation va etre faite \\
+\hline
+{\em y} & Position y de la case ou l evaluation va etre faite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valeur arbitraire en fonction de barriere se situant sur la vertical et l horizontal de la case 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_i_a_8c_aa9e1b225382ec0a1742acf8505be301a}\label{_i_a_8c_aa9e1b225382ec0a1742acf8505be301a}} 
+\index{IA.c@{IA.c}!IA@{IA}}
+\index{IA@{IA}!IA.c@{IA.c}}
+\doxysubsubsection{\texorpdfstring{IA()}{IA()}}
+{\footnotesize\ttfamily void IA (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tab\+Perso\mbox{[}$\,$\mbox{]},  }\item[{int}]{numero\+Perso,  }\item[{niveau\+\_\+t}]{mat,  }\item[{SDL\+\_\+\+Window $\ast$}]{p\+Window,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{rend,  }\item[{TTF\+\_\+\+Font $\ast$}]{font,  }\item[{int}]{nbperso,  }\item[{SDL\+\_\+\+Texture $\ast$}]{text\+Niv }\end{DoxyParamCaption})}
+
+
+
+Tout le deroulement d une partie de jeu d\textquotesingle{}une IA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & Tableau contenant les informations de toute les personnages \\
+\hline
+{\em numero\+Perso} & Personnage IA \\
+\hline
+{\em mat} & Matrice decrivant le niveau \\
+\hline
+{\em p\+Window} & Pointeur sur la fenêtre déjà ouverte \\
+\hline
+{\em rend} & Pointeur sur le renderer ratacher a la fenetre \\
+\hline
+{\em font} & Pointeur sur la police d\textquotesingle{}ecriture utilisé \\
+\hline
+{\em nb\+Perso} & Nombre total de personnage \\
+\hline
+{\em text\+Niv} & Pointeur sur la texture du niveau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_a_8c_af1dcaa405f92b50338b058c5184d8b77}\label{_i_a_8c_af1dcaa405f92b50338b058c5184d8b77}} 
+\index{IA.c@{IA.c}!indiceMaxMatrice@{indiceMaxMatrice}}
+\index{indiceMaxMatrice@{indiceMaxMatrice}!IA.c@{IA.c}}
+\doxysubsubsection{\texorpdfstring{indiceMaxMatrice()}{indiceMaxMatrice()}}
+{\footnotesize\ttfamily void indice\+Max\+Matrice (\begin{DoxyParamCaption}\item[{int}]{mat\mbox{[}5\mbox{]}\mbox{[}5\mbox{]},  }\item[{int $\ast$}]{x,  }\item[{int $\ast$}]{y }\end{DoxyParamCaption})}
+
+
+
+Trouve les indice de la valeur la plus grande de la matrice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pointeur sur la variable ou sera stocké l indice \\
+\hline
+{\em y} & Pointeur sur la variable ou sera stocké l indice \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_a_8c_a25b16b89863966d468df55ecd589789a}\label{_i_a_8c_a25b16b89863966d468df55ecd589789a}} 
+\index{IA.c@{IA.c}!plusBasVie@{plusBasVie}}
+\index{plusBasVie@{plusBasVie}!IA.c@{IA.c}}
+\doxysubsubsection{\texorpdfstring{plusBasVie()}{plusBasVie()}}
+{\footnotesize\ttfamily int plus\+Bas\+Vie (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tabperso\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+Perso }\end{DoxyParamCaption})}
+
+
+
+Trouve le personnage joueur qui a le moins de vie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & Tableau contenant les informations de toute les personnages \\
+\hline
+{\em nb\+Perso} & Nombre total de personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}indice dans le tableau tab\+Perso du personnage ayant le moins de vie 
+\end{DoxyReturn}

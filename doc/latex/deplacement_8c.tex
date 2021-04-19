@@ -1,0 +1,171 @@
+\hypertarget{deplacement_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/deplacement.c File Reference}
+\label{deplacement_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/deplacement.c@{C:/Users/armando/Desktop/Y-\/COM/src/deplacement.c}}
+
+
+Toutes les fonctions nécessaires au deplacement.  
+
+
+{\ttfamily \#include \char`\"{}../lib/deplacement.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{deplacement_8c_a7959d13b9c381d4fb24f4f494d07951d}{disponible}} (niveau\+\_\+t mat, int posX, int posY)
+\begin{DoxyCompactList}\small\item\em Verifie si la case selectionner dans la matrice du niveau n\textquotesingle{}est pas hors limite et si cela est une porte ou si c est vide. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{deplacement_8c_a3d3e061d581938fe0786e6983344c55f}{est\+\_\+vide}} (int coord\+\_\+x, int coord\+\_\+y, int mat\mbox{[}9\mbox{]}\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Verifie si la case selectionner ce est libre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{deplacement_8c_afdfab015458b56837c175734bc8c2913}{afficher\+Mat}} (int mat\mbox{[}9\mbox{]}\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Affiche sur la sortie standart la matrice (le terminal) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{deplacement_8c_a01ff60198b7841e4b546962cdf890812}{simplication\+\_\+mat}} (niveau\+\_\+t mat, int simp\mbox{[}9\mbox{]}\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Transforme la matrice de niveau (detailler), en une matrice simple ayant des 0 pour les cases libre et -\/1 pour les cases non libre. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{deplacement_8c_a421daf68fb1beaf989bf105e45520318}{chercher\+\_\+chemin\+\_\+rec}} (int simp\mbox{[}9\mbox{]}\mbox{[}16\mbox{]}, int chemin\mbox{[}9\mbox{]}\mbox{[}16\mbox{]}, int x, int y, int x\+\_\+fin, int y\+\_\+fin, int reccu, int reccu\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Fonction de backtracking servant a faire du pathfinding. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{deplacement_8c_a3a63a1281ad3cba3c4be7e316e2275ef}\label{deplacement_8c_a3a63a1281ad3cba3c4be7e316e2275ef}} 
+int {\bfseries chercher\+\_\+chemin} (int simp\mbox{[}9\mbox{]}\mbox{[}16\mbox{]}, int x\+\_\+debut, int y\+\_\+debut, int x\+\_\+fin, int y\+\_\+fin, niveau\+\_\+t niv)
+\item 
+void \mbox{\hyperlink{deplacement_8c_afc60b6c8dda63af9c5746a06bc173f08}{copie\+\_\+chemin}} (int simp\mbox{[}9\mbox{]}\mbox{[}16\mbox{]}, int chemin\mbox{[}9\mbox{]}\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Transpose le chemin de la matrice chemin jusqu a la matrice simpliee. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{deplacement_8c_a1475d83c19f2fd12dd0c7fde141952af}\label{deplacement_8c_a1475d83c19f2fd12dd0c7fde141952af}} 
+void {\bfseries phase\+\_\+deplacement} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int num\+Perso, SDL\+\_\+\+Window $\ast$p\+Window, SDL\+\_\+\+Renderer $\ast$renderer, niveau\+\_\+t mat, SDL\+\_\+\+Texture $\ast$Texniv, int nb\+Perso, TTF\+\_\+\+Font $\ast$font)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Toutes les fonctions nécessaires au deplacement. 
+
+\begin{DoxyAuthor}{Author}
+Armando Costa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19/02/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{deplacement_8c_afdfab015458b56837c175734bc8c2913}\label{deplacement_8c_afdfab015458b56837c175734bc8c2913}} 
+\index{deplacement.c@{deplacement.c}!afficherMat@{afficherMat}}
+\index{afficherMat@{afficherMat}!deplacement.c@{deplacement.c}}
+\doxysubsubsection{\texorpdfstring{afficherMat()}{afficherMat()}}
+{\footnotesize\ttfamily void afficher\+Mat (\begin{DoxyParamCaption}\item[{int}]{mat\mbox{[}9\mbox{]}\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Affiche sur la sortie standart la matrice (le terminal) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrice comportant la simplification du niveau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{deplacement_8c_a421daf68fb1beaf989bf105e45520318}\label{deplacement_8c_a421daf68fb1beaf989bf105e45520318}} 
+\index{deplacement.c@{deplacement.c}!chercher\_chemin\_rec@{chercher\_chemin\_rec}}
+\index{chercher\_chemin\_rec@{chercher\_chemin\_rec}!deplacement.c@{deplacement.c}}
+\doxysubsubsection{\texorpdfstring{chercher\_chemin\_rec()}{chercher\_chemin\_rec()}}
+{\footnotesize\ttfamily int chercher\+\_\+chemin\+\_\+rec (\begin{DoxyParamCaption}\item[{int}]{simp\mbox{[}9\mbox{]}\mbox{[}16\mbox{]},  }\item[{int}]{chemin\mbox{[}9\mbox{]}\mbox{[}16\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{x\+\_\+fin,  }\item[{int}]{y\+\_\+fin,  }\item[{int}]{reccu,  }\item[{int}]{reccu\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Fonction de backtracking servant a faire du pathfinding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em simp} & Matrice comportant la simplification du niveau \\
+\hline
+{\em chemin} & Matrice comportant le chemin final \\
+\hline
+{\em x} & Coordonnes x ou se trouve le personnage \\
+\hline
+{\em y} & Coordonnes y ou se trouve le personnage \\
+\hline
+{\em x\+\_\+fin} & Coordonnes x ou on veut aller \\
+\hline
+{\em y\+\_\+fin} & Coordonnes y ou on veut aller \\
+\hline
+{\em reccu} & Nombre d\textquotesingle{}appel de la fonction \\
+\hline
+{\em reccu\+\_\+max} & Nombre d\textquotesingle{}appel max de la fonction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un booleen sous forme d un int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{deplacement_8c_afc60b6c8dda63af9c5746a06bc173f08}\label{deplacement_8c_afc60b6c8dda63af9c5746a06bc173f08}} 
+\index{deplacement.c@{deplacement.c}!copie\_chemin@{copie\_chemin}}
+\index{copie\_chemin@{copie\_chemin}!deplacement.c@{deplacement.c}}
+\doxysubsubsection{\texorpdfstring{copie\_chemin()}{copie\_chemin()}}
+{\footnotesize\ttfamily void copie\+\_\+chemin (\begin{DoxyParamCaption}\item[{int}]{simp\mbox{[}9\mbox{]}\mbox{[}16\mbox{]},  }\item[{int}]{chemin\mbox{[}9\mbox{]}\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Transpose le chemin de la matrice chemin jusqu a la matrice simpliee. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em simp} & Matrice comportant la simplification du niveau \\
+\hline
+{\em chemin} & Matrice comportant le chemin final \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{deplacement_8c_a7959d13b9c381d4fb24f4f494d07951d}\label{deplacement_8c_a7959d13b9c381d4fb24f4f494d07951d}} 
+\index{deplacement.c@{deplacement.c}!disponible@{disponible}}
+\index{disponible@{disponible}!deplacement.c@{deplacement.c}}
+\doxysubsubsection{\texorpdfstring{disponible()}{disponible()}}
+{\footnotesize\ttfamily int disponible (\begin{DoxyParamCaption}\item[{niveau\+\_\+t}]{mat,  }\item[{int}]{posX,  }\item[{int}]{posY }\end{DoxyParamCaption})}
+
+
+
+Verifie si la case selectionner dans la matrice du niveau n\textquotesingle{}est pas hors limite et si cela est une porte ou si c est vide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrice decrivant le niveau \\
+\hline
+{\em posX} & Coordonnees X dont on veut verifier l\textquotesingle{}etat \\
+\hline
+{\em posY} & Coordonnees Y dont on veut verifier l\textquotesingle{}etat \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un booleen sous forme d un int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{deplacement_8c_a3d3e061d581938fe0786e6983344c55f}\label{deplacement_8c_a3d3e061d581938fe0786e6983344c55f}} 
+\index{deplacement.c@{deplacement.c}!est\_vide@{est\_vide}}
+\index{est\_vide@{est\_vide}!deplacement.c@{deplacement.c}}
+\doxysubsubsection{\texorpdfstring{est\_vide()}{est\_vide()}}
+{\footnotesize\ttfamily int est\+\_\+vide (\begin{DoxyParamCaption}\item[{int}]{coord\+\_\+x,  }\item[{int}]{coord\+\_\+y,  }\item[{int}]{mat\mbox{[}9\mbox{]}\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Verifie si la case selectionner ce est libre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord\+\_\+x} & Coordonnees X dont on veut verifier l\textquotesingle{}etat \\
+\hline
+{\em coord\+\_\+y} & Coordonnees Y dont on veut verifier l\textquotesingle{}etat \\
+\hline
+{\em mat} & Matrice comportant la simplification du niveau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un booleen sous forme d un int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{deplacement_8c_a01ff60198b7841e4b546962cdf890812}\label{deplacement_8c_a01ff60198b7841e4b546962cdf890812}} 
+\index{deplacement.c@{deplacement.c}!simplication\_mat@{simplication\_mat}}
+\index{simplication\_mat@{simplication\_mat}!deplacement.c@{deplacement.c}}
+\doxysubsubsection{\texorpdfstring{simplication\_mat()}{simplication\_mat()}}
+{\footnotesize\ttfamily void simplication\+\_\+mat (\begin{DoxyParamCaption}\item[{niveau\+\_\+t}]{mat,  }\item[{int}]{simp\mbox{[}9\mbox{]}\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Transforme la matrice de niveau (detailler), en une matrice simple ayant des 0 pour les cases libre et -\/1 pour les cases non libre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrice decrivant le niveau de facon detailler \\
+\hline
+{\em simp} & Matrice comportant la simplification du niveau \\
+\hline
+\end{DoxyParams}

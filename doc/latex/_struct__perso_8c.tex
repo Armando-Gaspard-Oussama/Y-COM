@@ -1,0 +1,100 @@
+\hypertarget{_struct__perso_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/\+Struct\+\_\+perso.c File Reference}
+\label{_struct__perso_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/Struct\_perso.c@{C:/Users/armando/Desktop/Y-\/COM/src/Struct\_perso.c}}
+
+
+Fonctions pour la gestion d\textquotesingle{}affichage et de changements de statistiques des personnages.  
+
+
+{\ttfamily \#include \char`\"{}../lib/\+Struct\+\_\+perso.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_struct__perso_8c_a688e1b9711e7b9535df9c313ae57c989}{afficher\+\_\+perso\+\_\+jouant}} (t\+\_\+pers $\ast$pers, int num)
+\begin{DoxyCompactList}\small\item\em Affiche la base des personnages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_struct__perso_8c_a125d9f5823944aeb7a263c0f1da653f4}{stock\+\_\+obj\+\_\+stat}} (char $\ast$fichier, int nb\+\_\+obj, t\+\_\+objet $\ast$tab)
+\begin{DoxyCompactList}\small\item\em stock les informations sur les armes dans un tableau d\textquotesingle{}objet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_struct__perso_8c_a876199484b29bd3c4b630ebdeadd568e}{afficher\+\_\+arme}} (t\+\_\+objet $\ast$obj, int num)
+\begin{DoxyCompactList}\small\item\em affiche les informations sur les armes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_struct__perso_8c_a461fbacf6a37f835ae77d2121dc17c83}{perso\+\_\+stat}} (t\+\_\+pers $\ast$pers, t\+\_\+objet $\ast$objet)
+\begin{DoxyCompactList}\small\item\em change les statistiques des personnages en fonction de celle de l\textquotesingle{}arme qu\textquotesingle{}il possède \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fonctions pour la gestion d\textquotesingle{}affichage et de changements de statistiques des personnages. 
+
+Les informations sur les persnnages et les armes sont dans des fichiers séparés Affichage des informations sur les personnages et les armes et changement de statistiques sur les personnages en fonction de l\textquotesingle{}arme Structure dans le fichier struct.\+h \begin{DoxySeeAlso}{See also}
+struct.\+h 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_struct__perso_8c_a876199484b29bd3c4b630ebdeadd568e}\label{_struct__perso_8c_a876199484b29bd3c4b630ebdeadd568e}} 
+\index{Struct\_perso.c@{Struct\_perso.c}!afficher\_arme@{afficher\_arme}}
+\index{afficher\_arme@{afficher\_arme}!Struct\_perso.c@{Struct\_perso.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_arme()}{afficher\_arme()}}
+{\footnotesize\ttfamily void afficher\+\_\+arme (\begin{DoxyParamCaption}\item[{t\+\_\+objet $\ast$}]{obj,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+affiche les informations sur les armes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointeur sur la structure objet contenant les informations sur les différentes armes \\
+\hline
+{\em num} & numéro dde la l\textquotesingle{}arme \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_struct__perso_8c_a688e1b9711e7b9535df9c313ae57c989}\label{_struct__perso_8c_a688e1b9711e7b9535df9c313ae57c989}} 
+\index{Struct\_perso.c@{Struct\_perso.c}!afficher\_perso\_jouant@{afficher\_perso\_jouant}}
+\index{afficher\_perso\_jouant@{afficher\_perso\_jouant}!Struct\_perso.c@{Struct\_perso.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_perso\_jouant()}{afficher\_perso\_jouant()}}
+{\footnotesize\ttfamily void afficher\+\_\+perso\+\_\+jouant (\begin{DoxyParamCaption}\item[{t\+\_\+pers $\ast$}]{pers,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Affiche la base des personnages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & pointeur sur la structure pers contenant les informations des différents personnages \\
+\hline
+{\em num} & numéro du personnage \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_struct__perso_8c_a461fbacf6a37f835ae77d2121dc17c83}\label{_struct__perso_8c_a461fbacf6a37f835ae77d2121dc17c83}} 
+\index{Struct\_perso.c@{Struct\_perso.c}!perso\_stat@{perso\_stat}}
+\index{perso\_stat@{perso\_stat}!Struct\_perso.c@{Struct\_perso.c}}
+\doxysubsubsection{\texorpdfstring{perso\_stat()}{perso\_stat()}}
+{\footnotesize\ttfamily perso\+\_\+stat (\begin{DoxyParamCaption}\item[{t\+\_\+pers $\ast$}]{pers,  }\item[{t\+\_\+objet $\ast$}]{objet }\end{DoxyParamCaption})}
+
+
+
+change les statistiques des personnages en fonction de celle de l\textquotesingle{}arme qu\textquotesingle{}il possède 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & pointeur sur la structure personnage t\+\_\+pers \\
+\hline
+{\em objet} & pointeur sur la structure objet t\+\_\+objet \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_struct__perso_8c_a125d9f5823944aeb7a263c0f1da653f4}\label{_struct__perso_8c_a125d9f5823944aeb7a263c0f1da653f4}} 
+\index{Struct\_perso.c@{Struct\_perso.c}!stock\_obj\_stat@{stock\_obj\_stat}}
+\index{stock\_obj\_stat@{stock\_obj\_stat}!Struct\_perso.c@{Struct\_perso.c}}
+\doxysubsubsection{\texorpdfstring{stock\_obj\_stat()}{stock\_obj\_stat()}}
+{\footnotesize\ttfamily stock\+\_\+obj\+\_\+stat (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier,  }\item[{int}]{nb\+\_\+obj,  }\item[{t\+\_\+objet $\ast$}]{tab }\end{DoxyParamCaption})}
+
+
+
+stock les informations sur les armes dans un tableau d\textquotesingle{}objet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & nom du fichier contenant les armes \\
+\hline
+{\em nb\+\_\+obj} & nombre d\textquotesingle{}objet dans le fichier \\
+\hline
+{\em tab} & tableau sur a structure objet pour stocker toutes les valeurs \\
+\hline
+\end{DoxyParams}

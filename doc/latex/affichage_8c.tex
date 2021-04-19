@@ -1,0 +1,176 @@
+\hypertarget{affichage_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/affichage.c File Reference}
+\label{affichage_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/affichage.c@{C:/Users/armando/Desktop/Y-\/COM/src/affichage.c}}
+
+
+Toutes les fonctions d\textquotesingle{}affichage nécessaires au projet.  
+
+
+{\ttfamily \#include \char`\"{}../lib/affichage.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lib/niveaux.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Window $\ast$ \mbox{\hyperlink{affichage_8c_a4a1f5bfc2990a291dfe101cfe5ffb4e5}{creation\+\_\+fenetre\+\_\+renderer}} (char $\ast$nom, SDL\+\_\+\+Renderer $\ast$$\ast$rend)
+\begin{DoxyCompactList}\small\item\em Ouvre une fenêtre à l\textquotesingle{}aide de la SDL2 et affecte un renderer à cette fenêtre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_a103daf3ad5707c8438cf395b019c425a}{affichage\+HP}} (t\+\_\+texperso tabperso\mbox{[}$\,$\mbox{]}, SDL\+\_\+\+Renderer $\ast$rend, int num\+Perso, TTF\+\_\+\+Font $\ast$font)
+\begin{DoxyCompactList}\small\item\em Affiche le nom et les HP d un personnage. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture $\ast$ \mbox{\hyperlink{affichage_8c_a96b071cf3a1f6c1175f5931f7d83beed}{charger\+\_\+niveau}} (SDL\+\_\+\+Window $\ast$p\+Window, char $\ast$nom\+FNiveau, SDL\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em Charge un niveau. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{affichage_8c_a806058450d230debd87cb8e79f618262}\label{affichage_8c_a806058450d230debd87cb8e79f618262}} 
+void {\bfseries charger\+\_\+stat\+\_\+perso} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int catego, int num\+Perso, int posX, int posY)
+\item 
+\mbox{\Hypertarget{affichage_8c_a933aeb74565e08cbd6e88ac6609012df}\label{affichage_8c_a933aeb74565e08cbd6e88ac6609012df}} 
+void {\bfseries charger\+\_\+personnage} (SDL\+\_\+\+Window $\ast$p\+Window, char $\ast$nom\+FPersonnage, SDL\+\_\+\+Renderer $\ast$renderer, t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int $\ast$numero\+Perso, niveau\+\_\+t niv, TTF\+\_\+\+Font $\ast$font)
+\item 
+\mbox{\Hypertarget{affichage_8c_adbe32d69696ee22bfe8783b94e069f63}\label{affichage_8c_adbe32d69696ee22bfe8783b94e069f63}} 
+void {\bfseries Update} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, SDL\+\_\+\+Window $\ast$p\+Window, SDL\+\_\+\+Renderer $\ast$rend, SDL\+\_\+\+Texture $\ast$Texniv, int nb\+Perso, TTF\+\_\+\+Font $\ast$font)
+\item 
+void \mbox{\hyperlink{affichage_8c_a673219d81df2166221346d9225884a53}{supprimer\+Texture\+Personnage}} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int $\ast$nb\+Perso, int numero\+Perso)
+\begin{DoxyCompactList}\small\item\em Supprime toute les textures lié a un personnage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_a7d736cd0a378e07a474cb62941b0b815}{supprimer\+Tout\+Personnage}} (t\+\_\+texperso tabperso\mbox{[}$\,$\mbox{]}, int $\ast$nb\+Perso)
+\begin{DoxyCompactList}\small\item\em Supprime les textures de tout les personnages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{affichage_8c_ac55230d93b16aada20ec0db66e1e57ea}{tout\+Supprimer}} (t\+\_\+texperso tabperso\mbox{[}$\,$\mbox{]}, int $\ast$nb\+Perso, SDL\+\_\+\+Window $\ast$p\+Window, SDL\+\_\+\+Renderer $\ast$rend, SDL\+\_\+\+Texture $\ast$niv)
+\begin{DoxyCompactList}\small\item\em Supprime toute les texture, renderer et fenetre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Toutes les fonctions d\textquotesingle{}affichage nécessaires au projet. 
+
+\begin{DoxyAuthor}{Author}
+Armando Costa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+09/02/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{affichage_8c_a103daf3ad5707c8438cf395b019c425a}\label{affichage_8c_a103daf3ad5707c8438cf395b019c425a}} 
+\index{affichage.c@{affichage.c}!affichageHP@{affichageHP}}
+\index{affichageHP@{affichageHP}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{affichageHP()}{affichageHP()}}
+{\footnotesize\ttfamily void affichage\+HP (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tabperso\mbox{[}$\,$\mbox{]},  }\item[{SDL\+\_\+\+Renderer $\ast$}]{rend,  }\item[{int}]{num\+Perso,  }\item[{TTF\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+Affiche le nom et les HP d un personnage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tabperso} & tableau sur la structure pers pour stocker toutes les valeurs et les textures \\
+\hline
+{\em render} & Pointeur sur le renderer ratacher a la fenetre de jeu \\
+\hline
+{\em font} & Police d ecriture du nom et des HP affichées \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{affichage_8c_a96b071cf3a1f6c1175f5931f7d83beed}\label{affichage_8c_a96b071cf3a1f6c1175f5931f7d83beed}} 
+\index{affichage.c@{affichage.c}!charger\_niveau@{charger\_niveau}}
+\index{charger\_niveau@{charger\_niveau}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{charger\_niveau()}{charger\_niveau()}}
+{\footnotesize\ttfamily void charger\+\_\+niveau (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{p\+Window,  }\item[{char $\ast$}]{nom\+FNiveau,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Charge un niveau. 
+
+\begin{DoxyAuthor}{Author}
+Armando Costa 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Window} & Pointeur sur la fenêtre déjà ouverte \\
+\hline
+{\em nom\+FNiveau} & Nom de l\textquotesingle{}image du niveau \\
+\hline
+{\em renderer} & Pointeur sur le renderer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne un pointeur sur la Texture 
+\end{DoxyReturn}
+\mbox{\Hypertarget{affichage_8c_a4a1f5bfc2990a291dfe101cfe5ffb4e5}\label{affichage_8c_a4a1f5bfc2990a291dfe101cfe5ffb4e5}} 
+\index{affichage.c@{affichage.c}!creation\_fenetre\_renderer@{creation\_fenetre\_renderer}}
+\index{creation\_fenetre\_renderer@{creation\_fenetre\_renderer}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{creation\_fenetre\_renderer()}{creation\_fenetre\_renderer()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Window $\ast$ creation\+\_\+fenetre\+\_\+renderer (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom,  }\item[{SDL\+\_\+\+Renderer $\ast$$\ast$}]{rend }\end{DoxyParamCaption})}
+
+
+
+Ouvre une fenêtre à l\textquotesingle{}aide de la SDL2 et affecte un renderer à cette fenêtre. 
+
+\begin{DoxyAuthor}{Author}
+Armando Costa 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Nom de la fenêtre ouverte \\
+\hline
+{\em rend} & Pointeur sur le renderer qui sera affecté à la fenêtre genérée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur sur la fenêtre ouverte par la fonction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{affichage_8c_a673219d81df2166221346d9225884a53}\label{affichage_8c_a673219d81df2166221346d9225884a53}} 
+\index{affichage.c@{affichage.c}!supprimerTexturePersonnage@{supprimerTexturePersonnage}}
+\index{supprimerTexturePersonnage@{supprimerTexturePersonnage}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{supprimerTexturePersonnage()}{supprimerTexturePersonnage()}}
+{\footnotesize\ttfamily void supprimer\+Texture\+Personnage (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tab\+Perso\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{nb\+Perso,  }\item[{int}]{numero\+Perso }\end{DoxyParamCaption})}
+
+
+
+Supprime toute les textures lié a un personnage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & tableau contenant tout les personnage ainsi que leur texture \\
+\hline
+{\em nb\+Perso} & Pointeur sur le nombre total de personnage \\
+\hline
+{\em numero\+Perso} & Indice du personnage dans le tableau tab\+Perso dont on veut supprimer les Texture \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{affichage_8c_a7d736cd0a378e07a474cb62941b0b815}\label{affichage_8c_a7d736cd0a378e07a474cb62941b0b815}} 
+\index{affichage.c@{affichage.c}!supprimerToutPersonnage@{supprimerToutPersonnage}}
+\index{supprimerToutPersonnage@{supprimerToutPersonnage}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{supprimerToutPersonnage()}{supprimerToutPersonnage()}}
+{\footnotesize\ttfamily void supprimer\+Tout\+Personnage (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tabperso\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{nb\+Perso }\end{DoxyParamCaption})}
+
+
+
+Supprime les textures de tout les personnages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & tableau contenant tout les personnage ainsi que leur texture \\
+\hline
+{\em nb\+Perso} & Pointeur sur le nombre total de personnage \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{affichage_8c_ac55230d93b16aada20ec0db66e1e57ea}\label{affichage_8c_ac55230d93b16aada20ec0db66e1e57ea}} 
+\index{affichage.c@{affichage.c}!toutSupprimer@{toutSupprimer}}
+\index{toutSupprimer@{toutSupprimer}!affichage.c@{affichage.c}}
+\doxysubsubsection{\texorpdfstring{toutSupprimer()}{toutSupprimer()}}
+{\footnotesize\ttfamily void tout\+Supprimer (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tabperso\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{nb\+Perso,  }\item[{SDL\+\_\+\+Window $\ast$}]{p\+Window,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{rend,  }\item[{SDL\+\_\+\+Texture $\ast$}]{niv }\end{DoxyParamCaption})}
+
+
+
+Supprime toute les texture, renderer et fenetre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & tableau contenant tout les personnage ainsi que leur texture \\
+\hline
+{\em nb\+Perso} & Pointeur sur le nombre total de personnage \\
+\hline
+{\em p\+Window} & Pointeur sur la fenetre de jeu \\
+\hline
+{\em rend} & Pointeur sur le renderer ratacher a la fenetre p\+Window \\
+\hline
+{\em niv} & Pointeur sur la Texture du niveau \\
+\hline
+\end{DoxyParams}

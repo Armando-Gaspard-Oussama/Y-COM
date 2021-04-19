@@ -1,0 +1,42 @@
+\hypertarget{niveaux_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/niveaux.c File Reference}
+\label{niveaux_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/niveaux.c@{C:/Users/armando/Desktop/Y-\/COM/src/niveaux.c}}
+
+
+Fonctions pour la gestion de niveaux à partir de leurs fichiers.  
+
+
+{\ttfamily \#include \char`\"{}../lib/niveaux.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{niveaux_8c_a787e61c0262e22c342cfdeafbc6089bc}\label{niveaux_8c_a787e61c0262e22c342cfdeafbc6089bc}} 
+void {\bfseries chargement\+\_\+contenu\+\_\+niveau} (niveau\+\_\+t mat, char $\ast$nom\+\_\+fichier)
+\item 
+void \mbox{\hyperlink{niveaux_8c_a11fd7586ea84be658d710a61ed3a02a0}{lecture\+\_\+niveau}} (niveau\+\_\+t mat)
+\begin{DoxyCompactList}\small\item\em Affiche sur la sortie standart (le terminale) le niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fonctions pour la gestion de niveaux à partir de leurs fichiers. 
+
+Les niveaux sont représentés dans leurs fichiers media/niveaux/\+XX.\+niv où XX est le numéro du niveau. Chaque fichier est une suite de caractères de chiffres sans espaces, représentant la matrice de gauche à droite et de haut en bas. Chaque caractère représente un bloc spécifique. \begin{DoxySeeAlso}{See also}
+niveaux.\+h 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{niveaux_8c_a11fd7586ea84be658d710a61ed3a02a0}\label{niveaux_8c_a11fd7586ea84be658d710a61ed3a02a0}} 
+\index{niveaux.c@{niveaux.c}!lecture\_niveau@{lecture\_niveau}}
+\index{lecture\_niveau@{lecture\_niveau}!niveaux.c@{niveaux.c}}
+\doxysubsubsection{\texorpdfstring{lecture\_niveau()}{lecture\_niveau()}}
+{\footnotesize\ttfamily void lecture\+\_\+niveau (\begin{DoxyParamCaption}\item[{niveau\+\_\+t}]{mat }\end{DoxyParamCaption})}
+
+
+
+Affiche sur la sortie standart (le terminale) le niveau. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrice comportant la description du niveau \\
+\hline
+\end{DoxyParams}

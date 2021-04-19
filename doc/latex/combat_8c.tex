@@ -1,0 +1,167 @@
+\hypertarget{combat_8c}{}\doxysection{C\+:/\+Users/armando/\+Desktop/\+Y-\/\+COM/src/combat.c File Reference}
+\label{combat_8c}\index{C:/Users/armando/Desktop/Y-\/COM/src/combat.c@{C:/Users/armando/Desktop/Y-\/COM/src/combat.c}}
+
+
+Toutes les fonctions nécessaires au combat.  
+
+
+{\ttfamily \#include \char`\"{}../lib/combat.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{combat_8c_a7aaffca7023aea654d4be5bf8d78c8a1}{est\+\_\+perso}} (niveau\+\_\+t mat, int x, int y)
+\begin{DoxyCompactList}\small\item\em Verifie si la case indiquer comporte un personnage. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{combat_8c_a2ab23f0cf8f231a6e7c86f0972e2c3dd}{get\+Num\+Ennemie}} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int x, int y, int nb\+Perso)
+\begin{DoxyCompactList}\small\item\em Trouve le numero dans le tableau du personnage a la position donner en parametres. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{combat_8c_a76a3392c5a4806815a5aa3a4eb65ab27}{traverse\+Barriere}} (niveau\+\_\+t mat, int x\+\_\+debut, int y\+\_\+debut, int x\+\_\+fin, int y\+\_\+fin)
+\begin{DoxyCompactList}\small\item\em Verifie si l\textquotesingle{}attaque traverse une barriere sur l horizontal ou la vertical. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{combat_8c_a589d46fb7b50f66a812a56bf8b082bf8}{est\+\_\+mort}} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int numero\+Perso)
+\begin{DoxyCompactList}\small\item\em Verifie si un personnage est mort. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{combat_8c_aaa8da10facc9cbffb0ebb77d50b5bc34}{fin\+Combat}} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int nb\+Perso)
+\begin{DoxyCompactList}\small\item\em Verifie si tout les personnage d un camp sont mort. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{combat_8c_a22b70d9438ba4643556a92639e558cc7}{phase\+Attaque}} (t\+\_\+texperso tab\+Perso\mbox{[}$\,$\mbox{]}, int numero\+Perso, niveau\+\_\+t mat, int nb\+Perso)
+\begin{DoxyCompactList}\small\item\em Deroulement de tout une partie attaque d\textquotesingle{}un personnage controler par le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Toutes les fonctions nécessaires au combat. 
+
+\begin{DoxyAuthor}{Author}
+Armando Costa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19/02/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{combat_8c_a589d46fb7b50f66a812a56bf8b082bf8}\label{combat_8c_a589d46fb7b50f66a812a56bf8b082bf8}} 
+\index{combat.c@{combat.c}!est\_mort@{est\_mort}}
+\index{est\_mort@{est\_mort}!combat.c@{combat.c}}
+\doxysubsubsection{\texorpdfstring{est\_mort()}{est\_mort()}}
+{\footnotesize\ttfamily int est\+\_\+mort (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tab\+Perso\mbox{[}$\,$\mbox{]},  }\item[{int}]{numero\+Perso }\end{DoxyParamCaption})}
+
+
+
+Verifie si un personnage est mort. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & Tableau contenant toute les information des personnages \\
+\hline
+{\em numero\+Perso} & personnage dont on souhaite connaitre l\textquotesingle{}etat \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{combat_8c_a7aaffca7023aea654d4be5bf8d78c8a1}\label{combat_8c_a7aaffca7023aea654d4be5bf8d78c8a1}} 
+\index{combat.c@{combat.c}!est\_perso@{est\_perso}}
+\index{est\_perso@{est\_perso}!combat.c@{combat.c}}
+\doxysubsubsection{\texorpdfstring{est\_perso()}{est\_perso()}}
+{\footnotesize\ttfamily int est\+\_\+perso (\begin{DoxyParamCaption}\item[{niveau\+\_\+t}]{mat,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Verifie si la case indiquer comporte un personnage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrice decrivant le niveau \\
+\hline
+{\em x} & Position x ou on regarde \\
+\hline
+{\em y} & Position y ou on regarde \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un booleen 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combat_8c_aaa8da10facc9cbffb0ebb77d50b5bc34}\label{combat_8c_aaa8da10facc9cbffb0ebb77d50b5bc34}} 
+\index{combat.c@{combat.c}!finCombat@{finCombat}}
+\index{finCombat@{finCombat}!combat.c@{combat.c}}
+\doxysubsubsection{\texorpdfstring{finCombat()}{finCombat()}}
+{\footnotesize\ttfamily int fin\+Combat (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tab\+Perso\mbox{[}$\,$\mbox{]},  }\item[{int}]{nb\+Perso }\end{DoxyParamCaption})}
+
+
+
+Verifie si tout les personnage d un camp sont mort. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & Tableau contenant toute les information des personnages \\
+\hline
+{\em nb\+Perso} & nombre total de personnage \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{combat_8c_a2ab23f0cf8f231a6e7c86f0972e2c3dd}\label{combat_8c_a2ab23f0cf8f231a6e7c86f0972e2c3dd}} 
+\index{combat.c@{combat.c}!getNumEnnemie@{getNumEnnemie}}
+\index{getNumEnnemie@{getNumEnnemie}!combat.c@{combat.c}}
+\doxysubsubsection{\texorpdfstring{getNumEnnemie()}{getNumEnnemie()}}
+{\footnotesize\ttfamily int get\+Num\+Ennemie (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tab\+Perso\mbox{[}$\,$\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{nb\+Perso }\end{DoxyParamCaption})}
+
+
+
+Trouve le numero dans le tableau du personnage a la position donner en parametres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & Tableau contenant les informations de toute les personnages \\
+\hline
+{\em x} & Position x du personnage dont on veut le numero \\
+\hline
+{\em y} & Position y du personnage dont on veut le numero \\
+\hline
+{\em nb\+Perso} & Nombre total de personnage dans le tableau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}indice du personnage dans le tableau positionner au coordonnees (x;y) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combat_8c_a22b70d9438ba4643556a92639e558cc7}\label{combat_8c_a22b70d9438ba4643556a92639e558cc7}} 
+\index{combat.c@{combat.c}!phaseAttaque@{phaseAttaque}}
+\index{phaseAttaque@{phaseAttaque}!combat.c@{combat.c}}
+\doxysubsubsection{\texorpdfstring{phaseAttaque()}{phaseAttaque()}}
+{\footnotesize\ttfamily void phase\+Attaque (\begin{DoxyParamCaption}\item[{t\+\_\+texperso}]{tab\+Perso\mbox{[}$\,$\mbox{]},  }\item[{int}]{numero\+Perso,  }\item[{niveau\+\_\+t}]{mat,  }\item[{int}]{nb\+Perso }\end{DoxyParamCaption})}
+
+
+
+Deroulement de tout une partie attaque d\textquotesingle{}un personnage controler par le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab\+Perso} & Tableau contenant toute les information des personnages \\
+\hline
+{\em numero\+Perso} & Indice dans le tableau du personne qui va faire l\textquotesingle{}attaque \\
+\hline
+{\em mat} & Matrice decrivant le niveau \\
+\hline
+{\em nb\+Perso} & Nombre total de personnage sur le niveau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{combat_8c_a76a3392c5a4806815a5aa3a4eb65ab27}\label{combat_8c_a76a3392c5a4806815a5aa3a4eb65ab27}} 
+\index{combat.c@{combat.c}!traverseBarriere@{traverseBarriere}}
+\index{traverseBarriere@{traverseBarriere}!combat.c@{combat.c}}
+\doxysubsubsection{\texorpdfstring{traverseBarriere()}{traverseBarriere()}}
+{\footnotesize\ttfamily int traverse\+Barriere (\begin{DoxyParamCaption}\item[{niveau\+\_\+t}]{mat,  }\item[{int}]{x\+\_\+debut,  }\item[{int}]{y\+\_\+debut,  }\item[{int}]{x\+\_\+fin,  }\item[{int}]{y\+\_\+fin }\end{DoxyParamCaption})}
+
+
+
+Verifie si l\textquotesingle{}attaque traverse une barriere sur l horizontal ou la vertical. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & Matrice decrivant le niveau \\
+\hline
+{\em x\+\_\+debut} & Position x de l\textquotesingle{}origine de l\textquotesingle{}attaque \\
+\hline
+{\em y\+\_\+debut} & Position y de l\textquotesingle{}origine de l\textquotesingle{}attaque \\
+\hline
+{\em x\+\_\+fin} & Position x de la destination de l\textquotesingle{}attaque \\
+\hline
+{\em y\+\_\+fin} & Position y de la destination de l\textquotesingle{}attaque \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un booleen 
+\end{DoxyReturn}
