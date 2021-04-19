@@ -10,39 +10,37 @@
 #include "../lib/commun.h"
 
 /**
- * \fn SDL_Texture * menu_quitter(SDL_Window * pWindow)
- * \brief Génère un menu pour quitter
- * \author Belkadi Oussama
- * \param nom Nom de la fenêtre ouverte
+ * \fn SDL_Texture * menu_quitter(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * TexMenu,int nbPerso)
+ * \brief Ouvre une fenêtre à l'aide de la SDL2 et affecte un renderer à cette fenêtre.
  * \param pWindow Pointeur sur la fenêtre déjà ouverte
+ * \param rend Pointeur sur le renderer qui sera affecté à la fenêtre genérée
+ * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
+ * \param nbPerso Le nombre de personnage dans le tableau
+ * \param Texniv Texture du menu
  */
 
-SDL_Texture * menu_quitter(char * nom, SDL_Window * pWindow){
+void menu_quitter(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * TexMenu,int nbPerso){
 
     int continuer = 3;
     SDL_Event event;
 
-
-    pWindow = SDL_CreateWindow(nom,
-    SDL_WINDOWPOS_CENTERED,
-    SDL_WINDOWPOS_CENTERED,
-    640,
-    480,
-    SDL_WINDOW_SHOWN);
-
-    SDL_Surface *ecran = NULL;
     SDL_Surface *menu = NULL;
 
-    SDL_rect positionMenu;
-    
-    menu = IMG_Load("menu.png");
+    SDL_Rect positionMenu;
+    positionMenu.x=LARGEUR/2;
+    positionMenu.y=HAUTEUR/2;
+
+    menu = SDL_RWops *rwop=SDL_RWFromFile("menu.png","rb");
+
+    menu = IMG_LoadPNG_RW(rwop);
+    SDL_Texture * menu_tex = SDL_CreateTextureFromSurface(rend, menu);
 
 
     if (event.key.keysym.sym == SDLK_ESCAPE){
-        whle (continuer){
+        while (continuer){
             SDL_WaitEvent(&event);
 
-            switch(event.type){ // si continuer =0 on quitte la sdl
+            switch(event.type){ 
                 case SDL_QUIT:
                 continuer=0;
                 break;
@@ -50,7 +48,7 @@ SDL_Texture * menu_quitter(char * nom, SDL_Window * pWindow){
                 case SDL_KEYDOWN:
                 switch(event.key.keysym.sym){
                     case SDLK_ESCAPE:
-                    continuer =0;
+                    exit(1);
                     break;
 
                     case SDLK_ENTER:
@@ -59,12 +57,15 @@ SDL_Texture * menu_quitter(char * nom, SDL_Window * pWindow){
                 }
                 break;
             }
-            SDL_BlitSurface(menu,NULL,ecran,&positionMenu);
-            SDL_flip(ecran);
+            SDL_QueryTexture(menu_tex, NULL, NULL, &(positionMenu.w), &(positionMenu.h));
+            SDL_RenderCopy(rend, menu_tex, NULL, &positionMenu);
+
+            SDL_RenderPresent(renderer);
+            SDL_RWclose(rwop);
+
+            Update(tabPerso, pWindow, rend, TexMenu, nbPerso);
         }
 
         SDL_FreeSurface(menu);
-        SDL_Quit();
-        return EXIT_success;
     }
 }
