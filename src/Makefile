@@ -1,10 +1,27 @@
-ERRLEVEL="-Wall -Werror -Wextra"
-OPTI="-g"
-LIBS="-lmingw32  -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf"
-INCLUDE="-I../lib/" #peut-être mieux de mettre le -I à l'extérieur de la variable et plutôt dans l'appel de GCC
-LIBDIR="-L../lib/" # pareil
-COMPIL="gcc"
-# probablement ajouter dossiers de sources et chercher d'autres options pour gcc
+IDIR =../lib
+CC=gcc
+CFLAGS= -I$(IDIR)
 
-all: #dépendances
-	$(COMPIL) $(ERRLEVEL) $(OPTI) $(INCLUDE) $(LIBDIR) $(LIBS) #output et #sources
+
+ODIR=obj
+LDIR =../lib
+
+LIBS=  -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lm
+
+_DEPS = affichage.h combat.h commun.h deplacement.h IA.h niveaux.h Struct_perso.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ = affichage.o combat.o deplacement.o IA.o niveaux.o Struct_perso.o main.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+
+$(ODIR)/%.o: %.c $(DEPS)
+		$(CC) -c -o $@ $< $(CFLAGS)
+
+prog: $(OBJ)
+		$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+.PHONY: clean
+
+clean:
+		rm -f $(ODIR)/*.o *~ core $(IDIR)/*~

@@ -198,15 +198,12 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
     while(flag==1){
 
         while(SDL_PollEvent(&event)){
-            printf("1.44\n");
             if(event.type == SDL_QUIT){
                 return ;   
             }
             if( event.type == SDL_MOUSEBUTTONDOWN ){
-                printf("1.4\n");
                 x_point = event.button.x/64;
                 y_point = event.button.y/64;
-                printf("1.5\n");
                 if(est_vide(y_point,x_point,simpli)){
                     if (chercher_chemin(simpli, tabPerso[numPerso].stPerso.pos_Y, tabPerso[numPerso].stPerso.pos_X, y_point, x_point,mat)==1 ){
                         flag=-1;

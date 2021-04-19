@@ -140,7 +140,7 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
 void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso,int posX, int posY){
 
   FILE* fic;
-  fic = fopen("../../media/personnagesEtArmes/pers.txt", "r");
+  fic = fopen("../media/personnagesEtArmes/pers.txt", "r");
 
   t_pers pers;
   pers.pos_X=posX;
