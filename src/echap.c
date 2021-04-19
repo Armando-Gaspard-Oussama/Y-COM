@@ -9,6 +9,14 @@
 #include "../lib/affichage.h"
 #include "../lib/commun.h"
 
+/**
+ * \fn SDL_Texture * menu_quitter(SDL_Window * pWindow)
+ * \brief Génère un menu pour quitter
+ * \author Belkadi Oussama
+ * \param pWindow l'écran d'affichage
+ * \param n nombre de pièce dans le niveau
+ */
+
 SDL_Texture * menu_quitter(SDL_Window * pWindow){
 
     int continuer = 3;
