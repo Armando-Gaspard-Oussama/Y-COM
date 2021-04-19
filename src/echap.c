@@ -13,8 +13,7 @@
  * \fn SDL_Texture * menu_quitter(SDL_Window * pWindow)
  * \brief Génère un menu pour quitter
  * \author Belkadi Oussama
- * \param pWindow l'écran d'affichage
- * \param n nombre de pièce dans le niveau
+ * \param pWindow Pointeur sur la fenêtre déjà ouverte
  */
 
 SDL_Texture * menu_quitter(SDL_Window * pWindow){
