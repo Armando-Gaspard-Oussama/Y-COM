@@ -119,7 +119,6 @@ int finCombat(t_texperso tabPerso[], int nbPerso){
  * \param nbPerso Nombre total de personnage sur le niveau
  */
 void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPerso){
-    srand(time(NULL));
     int flag =1;
     int x_point,y_point;
     int numEnnemie;
@@ -168,4 +167,5 @@ void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPe
     if(finCombat(tabPerso,nbPerso)){
         printf("C'est la fin du combat");
     }
+    flag=0;
 }

@@ -60,7 +60,7 @@ void menu_quitter(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * re
             SDL_QueryTexture(menu_tex, NULL, NULL, &(positionMenu.w), &(positionMenu.h));
             SDL_RenderCopy(rend, menu_tex, NULL, &positionMenu);
 
-            SDL_RenderPresent(renderer);
+            SDL_RenderPresent(rend);
             SDL_RWclose(rwop);
 
             Update(tabPerso, pWindow, rend, TexMenu, nbPerso);

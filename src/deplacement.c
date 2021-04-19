@@ -126,19 +126,31 @@ int chercher_chemin_rec(int simp[9][16],int chemin[9][16],int x,int y, int x_fin
 int chercher_chemin(int simp[9][16],int x_debut, int y_debut, int x_fin, int y_fin,niveau_t niv){
     int chemin[9][16]={0};
     simplication_mat(niv,chemin);
-    if(chercher_chemin_rec(simp,chemin,x_debut+1,y_debut,x_fin,y_fin,0,2)==1){
-        copie_chemin(simp,chemin);
-        return 1;
-    }else if(chercher_chemin_rec(simp,chemin,x_debut-1,y_debut,x_fin,y_fin,0,2)==1){
-        copie_chemin(simp,chemin);
-        return 1;
-    }else if(chercher_chemin_rec(simp,chemin,x_debut,y_debut+1,x_fin,y_fin,0,2)==1){
-        copie_chemin(simp,chemin);
-        return 1;
-    }else if(chercher_chemin_rec(simp,chemin,x_debut,y_debut-1,x_fin,y_fin,0,2)==1){
-        copie_chemin(simp,chemin);
-        return 1;
+    if(disponible(niv,x_debut+1,y_debut)==1){
+        if(chercher_chemin_rec(simp,chemin,x_debut+1,y_debut,x_fin,y_fin,0,3)==1){
+            copie_chemin(simp,chemin);
+            return 1;
+        }
     }
+    if(disponible(niv,x_debut-1,y_debut)==1){
+        if(chercher_chemin_rec(simp,chemin,x_debut-1,y_debut,x_fin,y_fin,0,3)==1){
+            copie_chemin(simp,chemin);
+            return 1;
+        }
+    }
+    if(disponible(niv,x_debut,y_debut-1)==1){
+        if(chercher_chemin_rec(simp,chemin,x_debut,y_debut-1,x_fin,y_fin,0,3)==1){
+            copie_chemin(simp,chemin);
+            return 1;
+        }
+    }
+    if(disponible(niv,x_debut,y_debut+1)==1){
+        if(chercher_chemin_rec(simp,chemin,x_debut,y_debut+1,x_fin,y_fin,0,3)==1){
+            copie_chemin(simp,chemin);
+            return 1;
+        }
+    }
+    return -1;
 }
 
 
@@ -182,15 +194,19 @@ void phase_deplacement(t_texperso tabPerso[],int numPerso, SDL_Window * pWindow,
 
     simplication_mat(mat,simpli);
     
+
     while(flag==1){
 
         while(SDL_PollEvent(&event)){
+            printf("1.44\n");
             if(event.type == SDL_QUIT){
                 return ;   
             }
             if( event.type == SDL_MOUSEBUTTONDOWN ){
+                printf("1.4\n");
                 x_point = event.button.x/64;
                 y_point = event.button.y/64;
+                printf("1.5\n");
                 if(est_vide(y_point,x_point,simpli)){
                     if (chercher_chemin(simpli, tabPerso[numPerso].stPerso.pos_Y, tabPerso[numPerso].stPerso.pos_X, y_point, x_point,mat)==1 ){
                         flag=-1;
