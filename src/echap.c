@@ -13,10 +13,11 @@
  * \fn SDL_Texture * menu_quitter(SDL_Window * pWindow)
  * \brief Génère un menu pour quitter
  * \author Belkadi Oussama
+ * \param nom Nom de la fenêtre ouverte
  * \param pWindow Pointeur sur la fenêtre déjà ouverte
  */
 
-SDL_Texture * menu_quitter(SDL_Window * pWindow){
+SDL_Texture * menu_quitter(char * nom, SDL_Window * pWindow){
 
     int continuer = 3;
     SDL_Event evenement;
