@@ -46,10 +46,10 @@ SDL_Window * creation_fenetre_renderer(char * nom, SDL_Renderer ** rend){
 
 /**
  * \fn void affichageHP(t_texperso tabperso[], SDL_Renderer * rend,int numPerso, TTF_Font * font)
- * \brief Affiche le nom et les HP d un personnage
+ * \brief Affiche le nom et les HP d'un personnage
  * \param tabperso tableau sur la structure pers pour stocker toutes les valeurs et les textures
- * \param render Pointeur sur le renderer ratacher a la fenetre de jeu
- * \param font Police d ecriture du nom et des HP affichées
+ * \param render Pointeur sur le renderer rattaché à la fenêtre de jeu
+ * \param font Police d'écriture du nom et des HP affichés
  */
 
 void affichageHP(t_texperso tabperso[], SDL_Renderer * rend,int numPerso, TTF_Font * font){
@@ -130,12 +130,12 @@ SDL_Texture * charger_niveau(SDL_Window * pWindow, char * nomFNiveau, SDL_Render
 
 /**
  * \fn charger_stat_perso(t_texperso tabPerso[], int numPerso, char * nomFPerso)
- * \brief stock les informations sur les personnages dans un tableau de personnages
+ * \brief stocke les informations sur les personnages dans un tableau de personnages
  * \param nomFPerso nom du fichier contenant les objets
  * \param numpPerso nombre de personnages dans le fichier
  * \param tabPerso tableau sur la structure pers pour stocker toutes les valeurs
- * \param posX Position X ou le personnage va être placé
- * \param posY Position Y ou le personnage va être placé
+ * \param posX Position X où le personnage va être placé
+ * \param posY Position Y où le personnage va être placé
  */
 void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso,int posX, int posY){
 
@@ -161,13 +161,13 @@ void charger_stat_perso(t_texperso tabPerso[], int catego, int numPerso,int posX
  * \fn void charger_personnage(SDL_Window * pWindow, char * nomFNiveau)
  * \brief Charge un personnage
  * \author Armando Costa
- * \param pWindow Pointeur sur la fenetre deja ouverte
- * \param nomFPersonnage Nom de l image du personnage
- * \param renderer Pointeur sur le renderer ratacher a la fenetre pWindow
- * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
- * \param numeroPerso Le nombre de personnage dans le tableau
- * \param niv Matrice decrivant le niveau
- * \param font Police d ecriture du nom et des HP affichées
+ * \param pWindow Pointeur sur la fenêtre déjà ouverte
+ * \param nomFPersonnage Nom de l'image du personnage
+ * \param renderer Pointeur sur le renderer rattaché à la fenêtre pWindow
+ * \param tabPerso tableau contenant tous les personnages ainsi que leurs textures
+ * \param numeroPerso Le nombre de personnages dans le tableau
+ * \param niv Matrice décrivant le niveau
+ * \param font Police d'écriture du nom et des HP affichés
  */
 void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Renderer * renderer, t_texperso tabPerso[], int * numeroPerso,niveau_t niv, TTF_Font * font){
   SDL_Rect imgDestRect;
@@ -201,14 +201,14 @@ void charger_personnage(SDL_Window * pWindow, char * nomFPersonnage, SDL_Rendere
 
 /**
  * \fn void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso)
- * \brief Rafraichit la position des Texture correspond au personnage
+ * \brief Rafraîchit la position des Texture correspondant aux personnages
  * \author Armando Costa
- * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
- * \param pWindow Pointeur sur la fenetre deja ouverte
- * \param rend Pointeur sur le renderer ratacher a la fenetre pWindow
+ * \param tabPerso tableau contenant tous les personnages ainsi que leurs textures
+ * \param pWindow Pointeur sur la fenêtre déjà ouverte
+ * \param rend Pointeur sur le renderer rattaché à la fenêtre pWindow
  * \param Texniv Texture du niveau
- * \param nbPerso Le nombre de personnage dans le tableau
- * \param font Police d ecriture du nom et des HP affichées
+ * \param nbPerso Le nombre de personnages dans le tableau
+ * \param font Police d'écriture du nom et des HP affichés
  */
 
 void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * Texniv,int nbPerso,TTF_Font * font){
@@ -246,9 +246,9 @@ void Update(t_texperso tabPerso[], SDL_Window * pWindow, SDL_Renderer * rend, SD
 
 /**
  * \fn void supprimerTexturePersonnage(t_texperso tabPerso[], int * nbPerso, int numeroPerso)
- * \brief Supprime toute les textures lié a un personnage
- * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
- * \param nbPerso Pointeur sur le nombre total de personnage
+ * \brief Supprime toutes les textures liées à un personnage
+ * \param tabPerso tableau contenant tous les personnages ainsi que leurs textures
+ * \param nbPerso Pointeur sur le nombre total de personnages
  * \param numeroPerso Indice du personnage dans le tableau tabPerso dont on veut supprimer les Texture
  */
 
@@ -261,9 +261,9 @@ void supprimerTexturePersonnage(t_texperso tabPerso[], int * nbPerso, int numero
 
 /**
  * \fn void supprimerToutPersonnage(t_texperso tabperso[], int * nbPerso)
- * \brief Supprime les textures de tout les personnages
- * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
- * \param nbPerso Pointeur sur le nombre total de personnage
+ * \brief Supprime les textures de tous les personnages
+ * \param tabPerso tableau contenant tous les personnages ainsi que leurs textures
+ * \param nbPerso Pointeur sur le nombre total de personnages
  */
 void supprimerToutPersonnage(t_texperso tabperso[], int * nbPerso){
   while((*nbPerso)!=0){
@@ -273,11 +273,11 @@ void supprimerToutPersonnage(t_texperso tabperso[], int * nbPerso){
 
 /**
  * \fn void toutSupprimer(t_texperso tabperso[], int * nbPerso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * niv)
- * \brief Supprime toute les texture, renderer et fenetre 
- * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
- * \param nbPerso Pointeur sur le nombre total de personnage
- * \param pWindow Pointeur sur la fenetre de jeu
- * \param rend Pointeur sur le renderer ratacher a la fenetre pWindow
+ * \brief Supprime toutes les textures, renderer et fenêtre 
+ * \param tabPerso tableau contenant tous les personnages ainsi que leurs textures
+ * \param nbPerso Pointeur sur le nombre total de personnages
+ * \param pWindow Pointeur sur la fenêtre de jeu
+ * \param rend Pointeur sur le renderer rattaché à la fenêtre pWindow
  * \param niv Pointeur sur la Texture du niveau 
  */
 void toutSupprimer(t_texperso tabperso[], int * nbPerso, SDL_Window * pWindow, SDL_Renderer * rend, SDL_Texture * niv){

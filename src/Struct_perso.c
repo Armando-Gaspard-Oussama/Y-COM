@@ -2,8 +2,8 @@
  * \file Struct_perso.c
  * \brief Fonctions pour la gestion d'affichage et de changements de statistiques des personnages
  * 
- * Les informations sur les persnnages et les armes sont dans des fichiers séparés
- * Affichage des informations sur les personnages et les armes et changement de statistiques sur les personnages en fonction de l'arme
+ * Les informations sur les personnages et les armes sont dans des fichiers séparés
+ * Affichage des informations sur les personnages et les armes et changements de statistiques sur les personnages en fonction de l'arme
  * Structure dans le fichier struct.h
  * \sa struct.h
  */
@@ -44,10 +44,10 @@ void afficher_perso_jouant(t_pers* pers, int num){
 
 /**
  * \fn stock_obj_stat(char * fichier, int nb_obj, t_objet * tab)
- * \brief stock les informations sur les armes dans un tableau d'objet
+ * \brief stocke les informations sur les armes dans un tableau d'objets
  * \param fichier nom du fichier contenant les armes
- * \param nb_obj nombre d'objet dans le fichier
- * \param tab tableau sur a structure objet pour stocker toutes les valeurs
+ * \param nb_obj nombre d'objets dans le fichier
+ * \param tab tableau sur la structure objet pour stocker toutes les valeurs
  */
 void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab){
 
@@ -86,7 +86,7 @@ void stock_obj_stat(char * fichier, int nb_obj, t_objet * tab){
  * \fn void afficher_arme(t_objet* obj, int num)
  * \brief affiche les informations sur les armes
  * \param obj pointeur sur la structure objet contenant les informations sur les différentes armes
- * \param num numéro dde la l'arme
+ * \param num numéro de l'arme
  */
 
 void afficher_arme(t_objet* obj, int num){

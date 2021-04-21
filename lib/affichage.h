@@ -8,12 +8,12 @@
 
     /**
      * \file affichage.h
-     * \brief Definitions des types et des fonction relatifs a l'affichage
+     * \brief Définitions des types et des fonction relatifs à l'affichage
      * 
      */
 
     /**
-     * \brief Structure qui contient les Texture relatif a un personnage, permet un affichage plus simple a mettre en oeuvre
+     * \brief Structure qui contient les Texture relatives à un personnage, permet un affichage plus simple à mettre en œuvre
      */
     typedef struct s_texperso
     {

@@ -12,7 +12,7 @@
 
 /**
  * \fn void chargement_contenu_niveau(carreau_t mat[9][16],char * nom_fichier)
- * \brief Charge la matrice représentant les éléments du niveau à l'aide d un Fichier.
+ * \brief Charge la matrice représentant les éléments du niveau à l'aide d'un Fichier.
  * \author Armando Costa
  * \param mat Matrice dans laquelle seront chargés les éléments
  * \param nom_fichier string contenant le nom du fichier dans lequel sont sauvegardés les éléments du niveau
@@ -45,7 +45,7 @@ void chargement_contenu_niveau(niveau_t mat,char * nom_fichier){
 
 /**
  * \fn void lecture_niveau(niveau_t mat)
- * \brief Affiche sur la sortie standart (le terminale) le niveau
+ * \brief Affiche sur la sortie standard (le terminal) le niveau
  * \param mat Matrice comportant la description du niveau
  */
 

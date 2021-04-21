@@ -3,7 +3,7 @@
 
     /**
      * \file labyrinthe_niveau.h
-     * \brief Définitions des types et fonctions relatifs au labyrinthe de niveau
+     * \brief Définitions des types et fonctions relatifs aux labyrinthes de niveaux
      */
 
 typedef struct room {

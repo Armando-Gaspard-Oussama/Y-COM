@@ -1,6 +1,6 @@
 /**
  * \file commun.h
- * \brief Contient toutes les variables communes aux librairie
+ * \brief Contient toutes les variables communes aux librairies
  * \author Armando Costa
  * \date 09/02/2021
  */

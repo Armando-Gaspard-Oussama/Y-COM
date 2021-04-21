@@ -2,7 +2,7 @@
 
 /**
  * \file combat.c
- * \brief Toutes les fonctions  nécessaires au combat.
+ * \brief Toutes les fonctions nécessaires au combat.
  * \author Armando Costa
  * \version 1.0
  * \date 19/02/2021
@@ -10,11 +10,11 @@
 
 /**
  * \fn int est_perso(niveau_t mat, int x, int y)
- * \brief Verifie si la case indiquer comporte un personnage
- * \param mat Matrice decrivant le niveau
- * \param x Position x ou on regarde
- * \param y Position y ou on regarde
- * \return un booleen
+ * \brief Vérifie si la case indiquée comporte un personnage
+ * \param mat Matrice décrivant le niveau
+ * \param x Position x où on regarde
+ * \param y Position y où on regarde
+ * \return un booléen
  */
 int est_perso(niveau_t mat, int x, int y){
     return(mat[y][x]==PERSO);
@@ -23,12 +23,12 @@ int est_perso(niveau_t mat, int x, int y){
 
 /**
  * \fn int getNumEnnemie(t_texperso tabPerso[],int x, int y, int nbPerso)
- * \brief Trouve le numero dans le tableau du personnage a la position donner en parametres
+ * \brief Trouve le numéro dans le tableau du personnage à la position donnée en paramètres
  * \param tabPerso Tableau contenant les informations de toute les personnages
- * \param x Position x du personnage dont on veut le numero
- * \param y Position y du personnage dont on veut le numero
+ * \param x Position x du personnage dont on veut le numéro
+ * \param y Position y du personnage dont on veut le numéro
  * \param nbPerso Nombre total de personnage dans le tableau
- * \return L'indice du personnage dans le tableau positionner au coordonnees (x;y)
+ * \return L'indice du personnage dans le tableau positioné aux coordonnées (x;y)
  */
 int getNumEnnemie(t_texperso tabPerso[],int x, int y, int nbPerso){
     int i;
@@ -42,13 +42,13 @@ int getNumEnnemie(t_texperso tabPerso[],int x, int y, int nbPerso){
 
 /**
  * \fn int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fin)
- * \brief Verifie si l'attaque traverse une barriere sur l horizontal ou la vertical
- * \param mat Matrice decrivant le niveau
+ * \brief Vérifie si l'attaque traverse une barrière sur l'horizontale ou la verticale
+ * \param mat Matrice décrivant le niveau
  * \param x_debut Position x de l'origine de l'attaque
  * \param y_debut Position y de l'origine de l'attaque
  * \param x_fin Position x de la destination de l'attaque
  * \param y_fin Position y de la destination de l'attaque
- * \return Un booleen
+ * \return Un booléen
  */
 int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fin){
     int signeX=1;
@@ -83,9 +83,9 @@ int traverseBarriere(niveau_t mat, int x_debut, int y_debut, int x_fin, int y_fi
 }
 /**
  * \fn int est_mort(t_texperso tabPerso[], int numeroPerso)
- * \brief Verifie si un personnage est mort
- * \param tabPerso  Tableau contenant toute les information des personnages
- * \param numeroPerso personnage dont on souhaite connaitre l'etat
+ * \brief Vérifie si un personnage est mort
+ * \param tabPerso  Tableau contenant toutes les information des personnages
+ * \param numeroPerso personnage dont on souhaite connaître l'état
  */
 
 int est_mort(t_texperso tabPerso[], int numeroPerso){
@@ -95,9 +95,9 @@ int est_mort(t_texperso tabPerso[], int numeroPerso){
 
 /**
  * \fn int finCombat(t_texperso tabPerso[], int nbPerso)
- * \brief Verifie si tout les personnage d un camp sont mort
- * \param tabPerso Tableau contenant toute les information des personnages
- * \param nbPerso nombre total de personnage
+ * \brief Verifie si tous les personnages d'un camp sont morts
+ * \param tabPerso Tableau contenant toutes les information des personnages
+ * \param nbPerso nombre total de personnages
  */
 int finCombat(t_texperso tabPerso[], int nbPerso){
     int ennemie=0,allie=0;
@@ -120,11 +120,11 @@ int finCombat(t_texperso tabPerso[], int nbPerso){
 
 /**
  * \fn void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPerso)
- * \brief Deroulement de tout une partie attaque d'un personnage controler par le joueur
- * \param tabPerso Tableau contenant toute les information des personnages
- * \param numeroPerso Indice dans le tableau du personne qui va faire l'attaque
- * \param mat Matrice decrivant le niveau
- * \param nbPerso Nombre total de personnage sur le niveau
+ * \brief Déroulement de toute une partie attaque d'un personnage contrôlé par le joueur
+ * \param tabPerso Tableau contenant toutes les informations des personnages
+ * \param numeroPerso Indice dans le tableau du personnage qui va faire l'attaque
+ * \param mat Matrice décrivant le niveau
+ * \param nbPerso Nombre total de personnages sur le niveau
  */
 void phaseAttaque(t_texperso tabPerso[], int numeroPerso, niveau_t mat, int nbPerso){
     int flag =1;

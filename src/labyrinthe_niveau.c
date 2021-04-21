@@ -2,7 +2,7 @@
 /**
  * \file labyrinthe_niveau.c
  * \brief Fonctions pour la création d'un labyrinthe de niveau
- * Création aléatoire de nouvelles pièces et des portes ouverte possible et affichages de celles-ci
+ * Création aléatoire de nouvelles pièces et des portes ouvertes possibles et affichages de celles-ci
  * Structure dans le fichier labyrinthe_niveau.h
  * \sa labyrinthe_niveau.h
  */
@@ -18,9 +18,9 @@
  * \fn Lab_Room *rand_room(Room m[MAX_ROWS][MAX_COL], Lab_Room *L, int n)
  * \brief Générer aléatoirement une pièce
  * \author Belkadi Oussama
- * \param m matrice de taille nombre max de ligne , max de colonne
+ * \param m matrice de taille nombre max de lignes , max de colonnes
  * \param L pointeur sur la structure b_room
- * \param n nombre de pièce dans le niveau
+ * \param n nombre de pièces dans le niveau
  */
 Lab_Room *rand_room(Room m[MAX_ROWS][MAX_COL], Lab_Room *L, int n) {
 
@@ -46,7 +46,7 @@ Lab_Room *rand_room(Room m[MAX_ROWS][MAX_COL], Lab_Room *L, int n) {
 /**
  * \fn Lab_Room *add_door(Room m[MAX_ROWS][MAX_COL], Lab_Room *r)
  * \brief Ajouter des portes aux pièces
- * \param m matrice de taille nombre max de ligne , max de colonne
+ * \param m matrices de tailles nombre max de lignes , max de colonnes
  * \param r pointeur sur la structure b_room
  */
 
@@ -89,7 +89,7 @@ Lab_Room *add_door(Room m[MAX_ROWS][MAX_COL], Lab_Room *r) {
 /**
  * \fn Lab_Room *add_door(Room m[MAX_ROWS][MAX_COL], Lab_Room *r)
  * \brief Afficher les pièces
- * \param m matrice de taille nombre max de ligne , max de colonne
+ * \param m matrice de taille nombre max de lignes , max de colonnes
  * \param r pointeur sur la structure b_room
  */
 void print_lab(Room m[MAX_ROWS][MAX_COL], Lab_Room *r) {

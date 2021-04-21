@@ -6,7 +6,7 @@
 
     /**
      * \file deplacement.h
-     * \brief Contient toutes les variables et fonction relatif au deplacement
+     * \brief Contient toutes les variables et fonctions relatives aux deplacements
      * \author Armando Costa
      */
     #include "commun.h"

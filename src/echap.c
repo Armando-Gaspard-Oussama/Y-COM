@@ -1,7 +1,7 @@
 /**
  * \file echap.c
  * \brief Fonctions pour la création d'un menu quitter/continuer pendant une partie
- * Affcihage d'un menu permettant de metre en pause ou quitter le jeu a l'aide des touches du clavier
+ * Affichage d'un menu permettant de mettre en pause ou quitter le jeu à l'aide des touches du clavier
  * Structure dans le fichier affichage.h
  * \sa affichage.h
  */
@@ -14,8 +14,8 @@
  * \brief Ouvre une fenêtre à l'aide de la SDL2 et affecte un renderer à cette fenêtre.
  * \param pWindow Pointeur sur la fenêtre déjà ouverte
  * \param rend Pointeur sur le renderer qui sera affecté à la fenêtre genérée
- * \param tabPerso tableau contenant tout les personnage ainsi que leur texture
- * \param nbPerso Le nombre de personnage dans le tableau
+ * \param tabPerso tableau contenant tous les personnages ainsi que leurs textures
+ * \param nbPerso Le nombre de personnages dans le tableau
  * \param Texniv Texture du menu
  */
 

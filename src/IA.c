@@ -2,7 +2,7 @@
 
 /**
  * \file IA.c
- * \brief Toutes les fonctions  nécessaires a l IA.
+ * \brief Toutes les fonctions nécessaires à l'IA.
  * \author Armando Costa
  * \version 1.0
  * \date 19/02/2021
@@ -20,9 +20,9 @@ void affichermat(int mat[5][5]){
 
 /**
  * \fn void indiceMaxMatrice(int mat[5][5],int * x, int * y)
- * \brief Trouve les indice de la valeur la plus grande de la matrice
- * \param x Pointeur sur la variable ou sera stocké l indice
- * \param y Pointeur sur la variable ou sera stocké l indice
+ * \brief Trouve les indices de la valeur la plus grande de la matrice
+ * \param x Pointeur sur la variable où sera stocké l indice
+ * \param y Pointeur sur la variable où sera stocké l''ndice
  */
 
 void indiceMaxMatrice(int mat[5][5],int * x, int * y){
@@ -41,11 +41,11 @@ void indiceMaxMatrice(int mat[5][5],int * x, int * y){
 
 /**
  * \fn int evaluationDeplacement(niveau_t mat, int x,int y)
- * \brief Retourne une valeur arbritraire définissant si cela vaut le coup de se deplace a la case passer en paramatre
+ * \brief Retourne une valeur arbritraire définissant si cela vaut le coup de se deplacer à la case passée en paramètre
  * \param mat Matrice decrivant le niveau
- * \param x Position x de la case ou l evaluation va etre faite
- * \param y Position y de la case ou l evaluation va etre faite
- * \return valeur arbitraire en fonction de barriere se situant sur la vertical et l horizontal de la case
+ * \param x Position x de la case où l'évaluation va être faite
+ * \param y Position y de la case où l'évaluation va être faite
+ * \return valeur arbitraire en fonction de barrière se situant sur la verticale et l horizontale de la case
  */
 
 int evaluationDeplacement(niveau_t mat, int x,int y){
@@ -82,8 +82,8 @@ int evaluationDeplacement(niveau_t mat, int x,int y){
 /**
  * \fn int plusBasVie(t_texperso tabperso[],int nbPerso)
  * \brief Trouve le personnage joueur qui a le moins de vie
- * \param tabPerso Tableau contenant les informations de toute les personnages
- * \param nbPerso Nombre total de personnage
+ * \param tabPerso Tableau contenant les informations de tous les personnages
+ * \param nbPerso Nombre total de personnages
  * \return L'indice dans le tableau tabPerso du personnage ayant le moins de vie
  */
 int plusBasVie(t_texperso tabperso[],int nbPerso){
@@ -102,14 +102,14 @@ int plusBasVie(t_texperso tabperso[],int nbPerso){
 
 /**
  * \fn void IA(t_texperso tabPerso[], int numeroPerso, niveau_t mat,SDL_Window * pWindow, SDL_Renderer * rend, TTF_Font * font,int nbperso, SDL_Texture * textNiv)
- * \brief Tout le deroulement d une partie de jeu d'une IA
- * \param tabPerso Tableau contenant les informations de toute les personnages
+ * \brief Tout le deroulement d'une partie de jeu d'une IA
+ * \param tabPerso Tableau contenant les informations de tous les personnages
  * \param numeroPerso Personnage IA
- * \param mat Matrice decrivant le niveau
+ * \param mat Matrice décrivant le niveau
  * \param pWindow Pointeur sur la fenêtre déjà ouverte
- * \param rend Pointeur sur le renderer ratacher a la fenetre
- * \param font Pointeur sur la police d'ecriture utilisé
- * \param nbPerso Nombre total de personnage
+ * \param rend Pointeur sur le renderer rattaché à la fenêtre
+ * \param font Pointeur sur la police d'écriture utilisée
+ * \param nbPerso Nombre total de personnages
  * \param textNiv Pointeur sur la texture du niveau
  */
 
